@@ -24,8 +24,8 @@ Partial Class Add_category
     Private Sub InitializeComponent()
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Add_category))
         Panel1 = New Panel()
+        DataGridView1 = New DataGridView()
         Label7 = New Label()
-        Panel3 = New Panel()
         Panel2 = New Panel()
         Button5 = New Button()
         Button4 = New Button()
@@ -44,17 +44,19 @@ Partial Class Add_category
         TextBox1 = New TextBox()
         Button1 = New Button()
         btn_logout_seller = New Button()
+        BackgroundWorker1 = New ComponentModel.BackgroundWorker()
         Panel1.SuspendLayout()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         Panel2.SuspendLayout()
         SuspendLayout()
         ' 
         ' Panel1
         ' 
-        Panel1.BackColor = Color.Snow
+        Panel1.BackColor = Color.Black
         Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), Image)
         Panel1.BackgroundImageLayout = ImageLayout.Stretch
+        Panel1.Controls.Add(DataGridView1)
         Panel1.Controls.Add(Label7)
-        Panel1.Controls.Add(Panel3)
         Panel1.Controls.Add(Panel2)
         Panel1.Controls.Add(Label1)
         Panel1.Location = New Point(195, 2)
@@ -62,25 +64,28 @@ Partial Class Add_category
         Panel1.Size = New Size(990, 626)
         Panel1.TabIndex = 0
         ' 
+        ' DataGridView1
+        ' 
+        DataGridView1.BackgroundColor = SystemColors.ControlLightLight
+        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Location = New Point(17, 296)
+        DataGridView1.Name = "DataGridView1"
+        DataGridView1.RowHeadersWidth = 51
+        DataGridView1.RowTemplate.Height = 29
+        DataGridView1.Size = New Size(946, 303)
+        DataGridView1.TabIndex = 7
+        ' 
         ' Label7
         ' 
         Label7.AutoSize = True
         Label7.BackColor = Color.Transparent
         Label7.Font = New Font("Arial Narrow", 19.8000011F, FontStyle.Bold Or FontStyle.Underline, GraphicsUnit.Point)
         Label7.ForeColor = Color.Snow
-        Label7.Location = New Point(409, 276)
+        Label7.Location = New Point(404, 253)
         Label7.Name = "Label7"
         Label7.Size = New Size(149, 40)
         Label7.TabIndex = 6
         Label7.Text = "Items List"
-        ' 
-        ' Panel3
-        ' 
-        Panel3.BackColor = Color.Transparent
-        Panel3.Location = New Point(53, 336)
-        Panel3.Name = "Panel3"
-        Panel3.Size = New Size(881, 263)
-        Panel3.TabIndex = 5
         ' 
         ' Panel2
         ' 
@@ -293,6 +298,7 @@ Partial Class Add_category
         Text = "Add_category"
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         Panel2.ResumeLayout(False)
         Panel2.PerformLayout()
         ResumeLayout(False)
@@ -301,7 +307,6 @@ Partial Class Add_category
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label7 As Label
-    Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Button5 As Button
     Friend WithEvents Button4 As Button
@@ -320,4 +325,6 @@ Partial Class Add_category
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Button1 As Button
     Friend WithEvents btn_logout_seller As Button
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
 End Class

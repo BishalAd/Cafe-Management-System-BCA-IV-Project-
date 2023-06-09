@@ -22,240 +22,274 @@ Partial Class Seller
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Label7 = New Label()
-        btn_refresh = New Button()
-        btn_add_to_bill = New Button()
-        btn_print = New Button()
-        btn_view_order = New Button()
-        combo_category = New ComboBox()
-        txt_quantity_seller = New TextBox()
-        txt_category_name = New TextBox()
+        Panel1 = New Panel()
+        Panel2 = New Panel()
+        Label1 = New Label()
+        Combo_addCategory_sell = New ComboBox()
+        btmAddCategory_sell = New Button()
+        Label2 = New Label()
+        txtCategoryName_sell = New TextBox()
+        btnRefresh_sell = New Button()
+        Item_list = New DataGridView()
         Label3 = New Label()
         Label4 = New Label()
         Label5 = New Label()
+        txt_quantity_sell = New TextBox()
+        btnAddBill = New Button()
+        DataGridView1 = New DataGridView()
+        btn_view_orders = New Button()
+        btn_print = New Button()
         Label6 = New Label()
-        Panel3 = New Panel()
-        btn_add_category = New Button()
-        Label1 = New Label()
-        btn_Back_seller = New Button()
-        Panel1 = New Panel()
-        Panel2 = New Panel()
         Panel1.SuspendLayout()
+        Panel2.SuspendLayout()
+        CType(Item_list, ComponentModel.ISupportInitialize).BeginInit()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' Label7
+        ' Panel1
         ' 
-        Label7.AutoSize = True
-        Label7.Font = New Font("Arial Narrow", 16F, FontStyle.Bold, GraphicsUnit.Point)
-        Label7.Location = New Point(412, 319)
-        Label7.Name = "Label7"
-        Label7.Size = New Size(133, 31)
-        Label7.TabIndex = 6
-        Label7.Text = "Your Order"
+        Panel1.BackColor = Color.Chocolate
+        Panel1.Controls.Add(Panel2)
+        Panel1.Location = New Point(0, 0)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(1924, 1061)
+        Panel1.TabIndex = 0
         ' 
-        ' btn_refresh
+        ' Panel2
         ' 
-        btn_refresh.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        btn_refresh.Location = New Point(245, 81)
-        btn_refresh.Name = "btn_refresh"
-        btn_refresh.Size = New Size(146, 44)
-        btn_refresh.TabIndex = 14
-        btn_refresh.Text = "Refresh"
-        btn_refresh.UseVisualStyleBackColor = True
-        ' 
-        ' btn_add_to_bill
-        ' 
-        btn_add_to_bill.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        btn_add_to_bill.Location = New Point(864, 275)
-        btn_add_to_bill.Name = "btn_add_to_bill"
-        btn_add_to_bill.Size = New Size(146, 44)
-        btn_add_to_bill.TabIndex = 13
-        btn_add_to_bill.Text = "Add To Bill"
-        btn_add_to_bill.UseVisualStyleBackColor = True
-        ' 
-        ' btn_print
-        ' 
-        btn_print.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        btn_print.Location = New Point(271, 571)
-        btn_print.Name = "btn_print"
-        btn_print.Size = New Size(146, 44)
-        btn_print.TabIndex = 12
-        btn_print.Text = "Print"
-        btn_print.UseVisualStyleBackColor = True
-        ' 
-        ' btn_view_order
-        ' 
-        btn_view_order.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        btn_view_order.Location = New Point(580, 571)
-        btn_view_order.Name = "btn_view_order"
-        btn_view_order.Size = New Size(146, 44)
-        btn_view_order.TabIndex = 4
-        btn_view_order.Text = "View Orders"
-        btn_view_order.UseVisualStyleBackColor = True
-        ' 
-        ' combo_category
-        ' 
-        combo_category.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        combo_category.FormattingEnabled = True
-        combo_category.Location = New Point(16, 86)
-        combo_category.Name = "combo_category"
-        combo_category.Size = New Size(200, 36)
-        combo_category.TabIndex = 11
-        ' 
-        ' txt_quantity_seller
-        ' 
-        txt_quantity_seller.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        txt_quantity_seller.Location = New Point(689, 280)
-        txt_quantity_seller.Name = "txt_quantity_seller"
-        txt_quantity_seller.Size = New Size(130, 34)
-        txt_quantity_seller.TabIndex = 9
-        ' 
-        ' txt_category_name
-        ' 
-        txt_category_name.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        txt_category_name.Location = New Point(16, 177)
-        txt_category_name.Name = "txt_category_name"
-        txt_category_name.Size = New Size(196, 34)
-        txt_category_name.TabIndex = 8
-        ' 
-        ' Label3
-        ' 
-        Label3.AutoSize = True
-        Label3.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Label3.Location = New Point(572, 280)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(88, 28)
-        Label3.TabIndex = 4
-        Label3.Text = "Quantity"
-        ' 
-        ' Label4
-        ' 
-        Label4.AutoSize = True
-        Label4.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Label4.Location = New Point(476, 579)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(54, 28)
-        Label4.TabIndex = 5
-        Label4.Text = "Total"
-        ' 
-        ' Label5
-        ' 
-        Label5.AutoSize = True
-        Label5.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Label5.Location = New Point(717, 51)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(93, 28)
-        Label5.TabIndex = 6
-        Label5.Text = "Items List"
-        ' 
-        ' Label6
-        ' 
-        Label6.AutoSize = True
-        Label6.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Label6.Location = New Point(75, 136)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(64, 28)
-        Label6.TabIndex = 7
-        Label6.Text = "Name"
-        ' 
-        ' Panel3
-        ' 
-        Panel3.Location = New Point(500, 81)
-        Panel3.Name = "Panel3"
-        Panel3.Size = New Size(545, 179)
-        Panel3.TabIndex = 5
-        ' 
-        ' btn_add_category
-        ' 
-        btn_add_category.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        btn_add_category.Location = New Point(32, 231)
-        btn_add_category.Name = "btn_add_category"
-        btn_add_category.Size = New Size(159, 44)
-        btn_add_category.TabIndex = 19
-        btn_add_category.Text = "Add Categories"
-        btn_add_category.UseVisualStyleBackColor = True
+        Panel2.BackColor = Color.Snow
+        Panel2.Controls.Add(Label6)
+        Panel2.Controls.Add(btn_print)
+        Panel2.Controls.Add(btn_view_orders)
+        Panel2.Controls.Add(DataGridView1)
+        Panel2.Controls.Add(btnAddBill)
+        Panel2.Controls.Add(txt_quantity_sell)
+        Panel2.Controls.Add(Label5)
+        Panel2.Controls.Add(Label4)
+        Panel2.Controls.Add(Label3)
+        Panel2.Controls.Add(Item_list)
+        Panel2.Controls.Add(btnRefresh_sell)
+        Panel2.Controls.Add(txtCategoryName_sell)
+        Panel2.Controls.Add(Label2)
+        Panel2.Controls.Add(btmAddCategory_sell)
+        Panel2.Controls.Add(Label1)
+        Panel2.Controls.Add(Combo_addCategory_sell)
+        Panel2.Location = New Point(203, 12)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(1718, 1017)
+        Panel2.TabIndex = 0
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Arial Narrow", 20F, FontStyle.Bold, GraphicsUnit.Point)
-        Label1.Location = New Point(374, 7)
+        Label1.BackColor = Color.Black
+        Label1.Font = New Font("Arial Narrow", 19.8000011F, FontStyle.Bold Or FontStyle.Underline, GraphicsUnit.Point)
+        Label1.ForeColor = Color.Snow
+        Label1.Location = New Point(800, 18)
         Label1.Name = "Label1"
-        Label1.Size = New Size(204, 40)
-        Label1.TabIndex = 0
-        Label1.Text = "Manage Items"
+        Label1.Size = New Size(236, 40)
+        Label1.TabIndex = 14
+        Label1.Text = "  Manage Items  "
         ' 
-        ' btn_Back_seller
+        ' Combo_addCategory_sell
         ' 
-        btn_Back_seller.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        btn_Back_seller.Location = New Point(12, 572)
-        btn_Back_seller.Name = "btn_Back_seller"
-        btn_Back_seller.Size = New Size(107, 44)
-        btn_Back_seller.TabIndex = 20
-        btn_Back_seller.Text = "Back"
-        btn_Back_seller.UseVisualStyleBackColor = True
+        Combo_addCategory_sell.Font = New Font("Arial Narrow", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
+        Combo_addCategory_sell.FormattingEnabled = True
+        Combo_addCategory_sell.Location = New Point(39, 193)
+        Combo_addCategory_sell.Name = "Combo_addCategory_sell"
+        Combo_addCategory_sell.Size = New Size(240, 35)
+        Combo_addCategory_sell.TabIndex = 13
         ' 
-        ' Panel1
+        ' btmAddCategory_sell
         ' 
-        Panel1.BackColor = Color.Snow
-        Panel1.Controls.Add(btn_view_order)
-        Panel1.Controls.Add(Label5)
-        Panel1.Controls.Add(btn_print)
-        Panel1.Controls.Add(btn_add_to_bill)
-        Panel1.Controls.Add(Label4)
-        Panel1.Controls.Add(btn_add_category)
-        Panel1.Controls.Add(btn_refresh)
-        Panel1.Controls.Add(Label7)
-        Panel1.Controls.Add(Panel3)
-        Panel1.Controls.Add(txt_quantity_seller)
-        Panel1.Controls.Add(Panel2)
-        Panel1.Controls.Add(Label3)
-        Panel1.Controls.Add(txt_category_name)
-        Panel1.Controls.Add(combo_category)
-        Panel1.Controls.Add(Label1)
-        Panel1.Controls.Add(Label6)
-        Panel1.Location = New Point(125, 1)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1055, 626)
-        Panel1.TabIndex = 16
+        btmAddCategory_sell.BackColor = Color.Chocolate
+        btmAddCategory_sell.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        btmAddCategory_sell.ForeColor = Color.Snow
+        btmAddCategory_sell.Location = New Point(139, 413)
+        btmAddCategory_sell.Name = "btmAddCategory_sell"
+        btmAddCategory_sell.Size = New Size(175, 44)
+        btmAddCategory_sell.TabIndex = 15
+        btmAddCategory_sell.Text = "Add Category"
+        btmAddCategory_sell.UseVisualStyleBackColor = False
         ' 
-        ' Panel2
+        ' Label2
         ' 
-        Panel2.Location = New Point(88, 365)
-        Panel2.Name = "Panel2"
-        Panel2.Size = New Size(865, 200)
-        Panel2.TabIndex = 4
+        Label2.AutoSize = True
+        Label2.BackColor = Color.Transparent
+        Label2.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point)
+        Label2.ForeColor = Color.Chocolate
+        Label2.Location = New Point(124, 301)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(196, 31)
+        Label2.TabIndex = 16
+        Label2.Text = "Categories Name"
+        ' 
+        ' txtCategoryName_sell
+        ' 
+        txtCategoryName_sell.Font = New Font("Arial Narrow", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
+        txtCategoryName_sell.Location = New Point(108, 353)
+        txtCategoryName_sell.Name = "txtCategoryName_sell"
+        txtCategoryName_sell.Size = New Size(240, 34)
+        txtCategoryName_sell.TabIndex = 17
+        ' 
+        ' btnRefresh_sell
+        ' 
+        btnRefresh_sell.BackColor = Color.Chocolate
+        btnRefresh_sell.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        btnRefresh_sell.ForeColor = Color.Snow
+        btnRefresh_sell.Location = New Point(329, 193)
+        btnRefresh_sell.Name = "btnRefresh_sell"
+        btnRefresh_sell.Size = New Size(175, 44)
+        btnRefresh_sell.TabIndex = 18
+        btnRefresh_sell.Text = "Refresh"
+        btnRefresh_sell.UseVisualStyleBackColor = False
+        ' 
+        ' Item_list
+        ' 
+        Item_list.BackgroundColor = SystemColors.ControlLightLight
+        Item_list.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Item_list.Location = New Point(684, 148)
+        Item_list.Name = "Item_list"
+        Item_list.RowHeadersWidth = 51
+        Item_list.RowTemplate.Height = 29
+        Item_list.Size = New Size(946, 290)
+        Item_list.TabIndex = 19
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.BackColor = Color.Transparent
+        Label3.Font = New Font("Arial Narrow", 19.8000011F, FontStyle.Bold Or FontStyle.Underline, GraphicsUnit.Point)
+        Label3.ForeColor = Color.Chocolate
+        Label3.Location = New Point(1055, 85)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(149, 40)
+        Label3.TabIndex = 20
+        Label3.Text = "Items List"
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.BackColor = Color.Transparent
+        Label4.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold Or FontStyle.Underline, GraphicsUnit.Point)
+        Label4.ForeColor = Color.Chocolate
+        Label4.Location = New Point(542, 517)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(130, 31)
+        Label4.TabIndex = 21
+        Label4.Text = "Your Order"
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.BackColor = Color.Transparent
+        Label5.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point)
+        Label5.ForeColor = Color.Chocolate
+        Label5.Location = New Point(956, 461)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(108, 31)
+        Label5.TabIndex = 22
+        Label5.Text = "Quantity"
+        ' 
+        ' txt_quantity_sell
+        ' 
+        txt_quantity_sell.Font = New Font("Arial Narrow", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
+        txt_quantity_sell.Location = New Point(1106, 458)
+        txt_quantity_sell.Name = "txt_quantity_sell"
+        txt_quantity_sell.Size = New Size(165, 34)
+        txt_quantity_sell.TabIndex = 23
+        ' 
+        ' btnAddBill
+        ' 
+        btnAddBill.BackColor = Color.Chocolate
+        btnAddBill.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        btnAddBill.ForeColor = Color.Snow
+        btnAddBill.Location = New Point(1316, 451)
+        btnAddBill.Name = "btnAddBill"
+        btnAddBill.Size = New Size(175, 44)
+        btnAddBill.TabIndex = 24
+        btnAddBill.Text = "Add To Bill"
+        btnAddBill.UseVisualStyleBackColor = False
+        ' 
+        ' DataGridView1
+        ' 
+        DataGridView1.BackgroundColor = SystemColors.ControlLightLight
+        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Location = New Point(93, 597)
+        DataGridView1.Name = "DataGridView1"
+        DataGridView1.RowHeadersWidth = 51
+        DataGridView1.RowTemplate.Height = 29
+        DataGridView1.Size = New Size(1156, 364)
+        DataGridView1.TabIndex = 25
+        ' 
+        ' btn_view_orders
+        ' 
+        btn_view_orders.BackColor = Color.Chocolate
+        btn_view_orders.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        btn_view_orders.ForeColor = Color.Snow
+        btn_view_orders.Location = New Point(1402, 900)
+        btn_view_orders.Name = "btn_view_orders"
+        btn_view_orders.Size = New Size(175, 44)
+        btn_view_orders.TabIndex = 26
+        btn_view_orders.Text = "View Orders"
+        btn_view_orders.UseVisualStyleBackColor = False
+        ' 
+        ' btn_print
+        ' 
+        btn_print.BackColor = Color.Chocolate
+        btn_print.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        btn_print.ForeColor = Color.Snow
+        btn_print.Location = New Point(1402, 731)
+        btn_print.Name = "btn_print"
+        btn_print.Size = New Size(175, 44)
+        btn_print.TabIndex = 27
+        btn_print.Text = "Print"
+        btn_print.UseVisualStyleBackColor = False
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.BackColor = Color.Transparent
+        Label6.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point)
+        Label6.ForeColor = Color.Chocolate
+        Label6.Location = New Point(1456, 816)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(67, 31)
+        Label6.TabIndex = 28
+        Label6.Text = "Total"
         ' 
         ' Seller
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1182, 628)
-        Controls.Add(btn_Back_seller)
+        ClientSize = New Size(1924, 1055)
         Controls.Add(Panel1)
         Name = "Seller"
         Text = "Seller"
         Panel1.ResumeLayout(False)
-        Panel1.PerformLayout()
+        Panel2.ResumeLayout(False)
+        Panel2.PerformLayout()
+        CType(Item_list, ComponentModel.ISupportInitialize).EndInit()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
-    Friend WithEvents Label7 As Label
-    Friend WithEvents btn_refresh As Button
-    Friend WithEvents btn_add_to_bill As Button
-    Friend WithEvents btn_print As Button
-    Friend WithEvents btn_view_order As Button
-    Friend WithEvents combo_category As ComboBox
-    Friend WithEvents txt_quantity_seller As TextBox
-    Friend WithEvents txt_category_name As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents btn_add_category As Button
-    Friend WithEvents Label1 As Label
-    Friend WithEvents btn_Back_seller As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents Combo_addCategory_sell As ComboBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents btmAddCategory_sell As Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents btnRefresh_sell As Button
+    Friend WithEvents txtCategoryName_sell As TextBox
+    Friend WithEvents btnAddBill As Button
+    Friend WithEvents txt_quantity_sell As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Item_list As DataGridView
+    Friend WithEvents Label6 As Label
+    Friend WithEvents btn_print As Button
+    Friend WithEvents btn_view_orders As Button
+    Friend WithEvents DataGridView1 As DataGridView
 End Class
