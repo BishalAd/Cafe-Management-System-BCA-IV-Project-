@@ -33,11 +33,11 @@ Partial Class Welcome
         welcome_intro.AutoSize = True
         welcome_intro.BackColor = Color.Transparent
         welcome_intro.FlatStyle = FlatStyle.Popup
-        welcome_intro.Font = New Font("Viner Hand ITC", 55F, FontStyle.Bold, GraphicsUnit.Point)
+        welcome_intro.Font = New Font("Viner Hand ITC", 72F, FontStyle.Bold, GraphicsUnit.Point)
         welcome_intro.ForeColor = SystemColors.Control
-        welcome_intro.Location = New Point(474, 9)
+        welcome_intro.Location = New Point(1013, 65)
         welcome_intro.Name = "welcome_intro"
-        welcome_intro.Size = New Size(587, 298)
+        welcome_intro.Size = New Size(765, 388)
         welcome_intro.TabIndex = 0
         welcome_intro.Text = "Welcome To " & vbCrLf & "Himal Cafe"
         ' 
@@ -46,9 +46,9 @@ Partial Class Welcome
         BtnAdmin.AutoSize = True
         BtnAdmin.BackColor = Color.Snow
         BtnAdmin.Font = New Font("Viner Hand ITC", 24F, FontStyle.Bold, GraphicsUnit.Point)
-        BtnAdmin.Location = New Point(527, 387)
+        BtnAdmin.Location = New Point(882, 589)
         BtnAdmin.Name = "BtnAdmin"
-        BtnAdmin.Size = New Size(175, 75)
+        BtnAdmin.Size = New Size(297, 84)
         BtnAdmin.TabIndex = 1
         BtnAdmin.Text = "Admin"
         BtnAdmin.UseVisualStyleBackColor = False
@@ -58,9 +58,9 @@ Partial Class Welcome
         BtnSeller.AutoSize = True
         BtnSeller.BackColor = Color.Snow
         BtnSeller.Font = New Font("Viner Hand ITC", 24F, FontStyle.Bold, GraphicsUnit.Point)
-        BtnSeller.Location = New Point(517, 511)
+        BtnSeller.Location = New Point(882, 782)
         BtnSeller.Name = "BtnSeller"
-        BtnSeller.Size = New Size(175, 75)
+        BtnSeller.Size = New Size(297, 75)
         BtnSeller.TabIndex = 2
         BtnSeller.Text = "Seller"
         BtnSeller.UseVisualStyleBackColor = False
@@ -73,7 +73,7 @@ Partial Class Welcome
         BackColor = Color.Black
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
-        ClientSize = New Size(1182, 628)
+        ClientSize = New Size(1924, 1055)
         Controls.Add(BtnSeller)
         Controls.Add(BtnAdmin)
         Controls.Add(welcome_intro)

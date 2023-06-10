@@ -3,7 +3,7 @@
         If txt_username.Text = "" Or txt_password.Text = "" Then
             MsgBox("Enter UserName and Password")
         ElseIf txt_username.Text = "Admin" And txt_password.Text = "Password" Then
-            Dim obj = New Add_category
+            Dim obj = New Add_New_Cagegory
             obj.Show()
             Me.Hide()
         Else
@@ -20,7 +20,7 @@
             txt_password.PasswordChar = ""
         End If
     End Sub
-    Private Sub Btn_back_Click(sender As Object, e As EventArgs)
+    Private Sub Btn_back_Click_1(sender As Object, e As EventArgs) Handles Btn_back.Click
         Dim obj = New Welcome
         obj.Show()
         Me.Hide()
