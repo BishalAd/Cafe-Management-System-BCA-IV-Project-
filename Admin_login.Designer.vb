@@ -85,6 +85,7 @@ Partial Class Admin_login
         ' 
         txt_username.Font = New Font("Century Gothic", 16.2F, FontStyle.Regular, GraphicsUnit.Point)
         txt_username.ForeColor = Color.Black
+        txt_username.HideSelection = False
         txt_username.Location = New Point(509, 300)
         txt_username.Name = "txt_username"
         txt_username.Size = New Size(243, 41)

@@ -22,9 +22,11 @@ Partial Class Seller
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Panel1 = New Panel()
         btn_logout_seller = New Button()
         Panel2 = New Panel()
+        ItemDGV = New DataGridView()
         Label6 = New Label()
         btn_print = New Button()
         btn_view_orders = New Button()
@@ -34,17 +36,16 @@ Partial Class Seller
         Label5 = New Label()
         Label4 = New Label()
         Label3 = New Label()
-        Item_list = New DataGridView()
         btnRefresh_sell = New Button()
         txtCategoryName_sell = New TextBox()
         Label2 = New Label()
         btmAddCategory_sell = New Button()
         Label1 = New Label()
-        Combo_addCategory_sell = New ComboBox()
+        CatCb = New ComboBox()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
+        CType(ItemDGV, ComponentModel.ISupportInitialize).BeginInit()
         CType(view_yourOrder, ComponentModel.ISupportInitialize).BeginInit()
-        CType(Item_list, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel1
@@ -71,6 +72,7 @@ Partial Class Seller
         ' Panel2
         ' 
         Panel2.BackColor = Color.Snow
+        Panel2.Controls.Add(ItemDGV)
         Panel2.Controls.Add(Label6)
         Panel2.Controls.Add(btn_print)
         Panel2.Controls.Add(btn_view_orders)
@@ -80,17 +82,33 @@ Partial Class Seller
         Panel2.Controls.Add(Label5)
         Panel2.Controls.Add(Label4)
         Panel2.Controls.Add(Label3)
-        Panel2.Controls.Add(Item_list)
         Panel2.Controls.Add(btnRefresh_sell)
         Panel2.Controls.Add(txtCategoryName_sell)
         Panel2.Controls.Add(Label2)
         Panel2.Controls.Add(btmAddCategory_sell)
         Panel2.Controls.Add(Label1)
-        Panel2.Controls.Add(Combo_addCategory_sell)
+        Panel2.Controls.Add(CatCb)
         Panel2.Location = New Point(203, 12)
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(1718, 1017)
         Panel2.TabIndex = 0
+        ' 
+        ' ItemDGV
+        ' 
+        ItemDGV.BackgroundColor = Color.Snow
+        ItemDGV.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None
+        ItemDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        ItemDGV.Cursor = Cursors.Hand
+        ItemDGV.EnableHeadersVisualStyles = False
+        ItemDGV.Location = New Point(785, 119)
+        ItemDGV.Name = "ItemDGV"
+        ItemDGV.RowHeadersWidth = 51
+        DataGridViewCellStyle1.Font = New Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        ItemDGV.RowsDefaultCellStyle = DataGridViewCellStyle1
+        ItemDGV.RowTemplate.Height = 29
+        ItemDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        ItemDGV.Size = New Size(890, 332)
+        ItemDGV.TabIndex = 30
         ' 
         ' Label6
         ' 
@@ -189,22 +207,11 @@ Partial Class Seller
         Label3.BackColor = Color.Transparent
         Label3.Font = New Font("Arial Narrow", 19.8000011F, FontStyle.Bold Or FontStyle.Underline, GraphicsUnit.Point)
         Label3.ForeColor = Color.Chocolate
-        Label3.Location = New Point(1055, 85)
+        Label3.Location = New Point(1100, 76)
         Label3.Name = "Label3"
         Label3.Size = New Size(149, 40)
         Label3.TabIndex = 20
         Label3.Text = "Items List"
-        ' 
-        ' Item_list
-        ' 
-        Item_list.BackgroundColor = SystemColors.ControlLightLight
-        Item_list.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Item_list.Location = New Point(684, 148)
-        Item_list.Name = "Item_list"
-        Item_list.RowHeadersWidth = 51
-        Item_list.RowTemplate.Height = 29
-        Item_list.Size = New Size(946, 290)
-        Item_list.TabIndex = 19
         ' 
         ' btnRefresh_sell
         ' 
@@ -262,14 +269,14 @@ Partial Class Seller
         Label1.TabIndex = 14
         Label1.Text = "  Manage Items  "
         ' 
-        ' Combo_addCategory_sell
+        ' CatCb
         ' 
-        Combo_addCategory_sell.Font = New Font("Arial Narrow", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
-        Combo_addCategory_sell.FormattingEnabled = True
-        Combo_addCategory_sell.Location = New Point(39, 193)
-        Combo_addCategory_sell.Name = "Combo_addCategory_sell"
-        Combo_addCategory_sell.Size = New Size(240, 35)
-        Combo_addCategory_sell.TabIndex = 13
+        CatCb.Font = New Font("Arial Narrow", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
+        CatCb.FormattingEnabled = True
+        CatCb.Location = New Point(39, 193)
+        CatCb.Name = "CatCb"
+        CatCb.Size = New Size(240, 35)
+        CatCb.TabIndex = 13
         ' 
         ' Seller
         ' 
@@ -282,14 +289,14 @@ Partial Class Seller
         Panel1.ResumeLayout(False)
         Panel2.ResumeLayout(False)
         Panel2.PerformLayout()
+        CType(ItemDGV, ComponentModel.ISupportInitialize).EndInit()
         CType(view_yourOrder, ComponentModel.ISupportInitialize).EndInit()
-        CType(Item_list, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Combo_addCategory_sell As ComboBox
+    Friend WithEvents CatCb As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents btmAddCategory_sell As Button
     Friend WithEvents Label2 As Label
@@ -300,10 +307,10 @@ Partial Class Seller
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Item_list As DataGridView
     Friend WithEvents Label6 As Label
     Friend WithEvents btn_print As Button
     Friend WithEvents btn_view_orders As Button
     Friend WithEvents view_yourOrder As DataGridView
     Friend WithEvents btn_logout_seller As Button
+    Friend WithEvents ItemDGV As DataGridView
 End Class
