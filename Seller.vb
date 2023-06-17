@@ -1,4 +1,6 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Xml.Schema
+
 Public Class Seller
     Dim Con As SqlConnection = New SqlConnection("Data Source=DELL\SQLEXPRESS;Initial Catalog=Cafe;Integrated Security=True")
     Private Sub btn_logout_seller_Click(sender As Object, e As EventArgs) Handles btn_logout_seller.Click
@@ -12,9 +14,9 @@ Public Class Seller
         Dim adapter = New SqlDataAdapter(cmd)
         Dim Tbl = New DataTable()
         adapter.Fill(Tbl)
-        CatCb.DataSource = Tbl
-        CatCb.DisplayMember = "CatName"
-        CatCb.ValueMember = "CatName"
+        combo.DataSource = Tbl
+        combo.DisplayMember = "CatName"
+        combo.ValueMember = "CatName"
         Con.Close()
     End Sub
     Private Sub DisplayItem()
@@ -31,7 +33,7 @@ Public Class Seller
     End Sub
     Private Sub FilterByCategory()
         Con.Open()
-        Dim query = "Select * from item where Item_Cat= '" & CatCb.SelectedValue.ToString() & "'"
+        Dim query = "Select * from item where Item_Cat= '" & combo.SelectedValue.ToString() & "'"
         Dim cmd = New SqlCommand(query, Con)
         Dim adapter = New SqlDataAdapter(cmd)
         Dim builder = New SqlCommandBuilder(adapter)
@@ -41,12 +43,57 @@ Public Class Seller
         ItemDGV.DataSource = ds.Tables(0)
         Con.Close()
     End Sub
-    Private Sub ItemDGV_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
-        DisplayItem()
-        FillCategory()
-    End Sub
 
-    Private Sub CatCb_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles CatCb.SelectionChangeCommitted
+    Private Sub CatCb_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles combo.SelectionChangeCommitted
         FilterByCategory()
     End Sub
+
+    Private Sub btnRefresh_sell_Click(sender As Object, e As EventArgs) Handles btnRefresh_sell.Click
+        DisplayItem()
+    End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+        DisplayItem()
+        FillCategory()
+
+    End Sub
+    Dim ProdName
+    Dim i = 0, GrTotal = 0, price, qty
+    Private Sub btnAddBill_Click(sender As Object, e As EventArgs) Handles btnAddBill.Click
+        If key = 0 Then
+            MsgBox("Select a Item")
+        ElseIf qty > stock Then
+            MsgBox("No Enough Stock")
+        Else
+            Dim rnum As Integer = BilDGV.Rows.Add()
+            Dim total = Convert.ToInt32(txt_quantity_sell.Text) * price
+            i = i + 1
+            BilDGV.Rows.Item(rnum).Cells("Column1").Value = i
+            BilDGV.Rows.Item(rnum).Cells("Column2").Value = ProdName
+            BilDGV.Rows.Item(rnum).Cells("Column3").Value = price
+            BilDGV.Rows.Item(rnum).Cells("Column4").Value = txt_quantity_sell.Text
+            BilDGV.Rows.Item(rnum).Cells("Column5").Value = total
+            GrTotal = GrTotal + total
+            TotalBill.Text = "Rs " + Convert.ToString(GrTotal)
+            txt_quantity_sell.Text = ""
+            key = 0
+        End If
+    End Sub
+
+    Dim key = 0, stock
+    Private Sub ItemDGV_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles ItemDGV.CellMouseClick
+        Dim row As DataGridViewRow = ItemDGV.Rows(e.RowIndex)
+        ProdName = row.Cells(1).Value.ToString
+        price = row.Cells(3).Value.ToString
+        If ProdName = "" Then
+            key = 0
+            stock = 0
+        Else
+            key = Convert.ToInt32(row.Cells(0).Value.ToString)
+            stock = Convert.ToInt32(row.Cells(4).Value.ToString)
+            price = Convert.ToInt32(row.Cells(3).Value.ToString)
+        End If
+    End Sub
+
+
 End Class

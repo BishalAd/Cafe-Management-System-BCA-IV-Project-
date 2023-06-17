@@ -27,25 +27,27 @@ Partial Class Seller
         btn_logout_seller = New Button()
         Panel2 = New Panel()
         ItemDGV = New DataGridView()
-        Label6 = New Label()
+        TotalBill = New Label()
         btn_print = New Button()
         btn_view_orders = New Button()
-        view_yourOrder = New DataGridView()
+        BilDGV = New DataGridView()
+        Column1 = New DataGridViewTextBoxColumn()
+        Column2 = New DataGridViewTextBoxColumn()
+        Column3 = New DataGridViewTextBoxColumn()
+        Column4 = New DataGridViewTextBoxColumn()
+        Column5 = New DataGridViewTextBoxColumn()
         btnAddBill = New Button()
         txt_quantity_sell = New TextBox()
         Label5 = New Label()
         Label4 = New Label()
         Label3 = New Label()
         btnRefresh_sell = New Button()
-        txtCategoryName_sell = New TextBox()
-        Label2 = New Label()
-        btmAddCategory_sell = New Button()
         Label1 = New Label()
-        CatCb = New ComboBox()
+        combo = New ComboBox()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
         CType(ItemDGV, ComponentModel.ISupportInitialize).BeginInit()
-        CType(view_yourOrder, ComponentModel.ISupportInitialize).BeginInit()
+        CType(BilDGV, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel1
@@ -73,21 +75,18 @@ Partial Class Seller
         ' 
         Panel2.BackColor = Color.Snow
         Panel2.Controls.Add(ItemDGV)
-        Panel2.Controls.Add(Label6)
+        Panel2.Controls.Add(TotalBill)
         Panel2.Controls.Add(btn_print)
         Panel2.Controls.Add(btn_view_orders)
-        Panel2.Controls.Add(view_yourOrder)
+        Panel2.Controls.Add(BilDGV)
         Panel2.Controls.Add(btnAddBill)
         Panel2.Controls.Add(txt_quantity_sell)
         Panel2.Controls.Add(Label5)
         Panel2.Controls.Add(Label4)
         Panel2.Controls.Add(Label3)
         Panel2.Controls.Add(btnRefresh_sell)
-        Panel2.Controls.Add(txtCategoryName_sell)
-        Panel2.Controls.Add(Label2)
-        Panel2.Controls.Add(btmAddCategory_sell)
         Panel2.Controls.Add(Label1)
-        Panel2.Controls.Add(CatCb)
+        Panel2.Controls.Add(combo)
         Panel2.Location = New Point(203, 12)
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(1718, 1017)
@@ -110,17 +109,17 @@ Partial Class Seller
         ItemDGV.Size = New Size(890, 332)
         ItemDGV.TabIndex = 30
         ' 
-        ' Label6
+        ' TotalBill
         ' 
-        Label6.AutoSize = True
-        Label6.BackColor = Color.Transparent
-        Label6.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point)
-        Label6.ForeColor = Color.Chocolate
-        Label6.Location = New Point(1456, 816)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(67, 31)
-        Label6.TabIndex = 28
-        Label6.Text = "Total"
+        TotalBill.AutoSize = True
+        TotalBill.BackColor = Color.Transparent
+        TotalBill.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point)
+        TotalBill.ForeColor = Color.Chocolate
+        TotalBill.Location = New Point(1456, 816)
+        TotalBill.Name = "TotalBill"
+        TotalBill.Size = New Size(67, 31)
+        TotalBill.TabIndex = 28
+        TotalBill.Text = "Total"
         ' 
         ' btn_print
         ' 
@@ -146,23 +145,60 @@ Partial Class Seller
         btn_view_orders.Text = "View Orders"
         btn_view_orders.UseVisualStyleBackColor = False
         ' 
-        ' view_yourOrder
+        ' BilDGV
         ' 
-        view_yourOrder.BackgroundColor = SystemColors.ControlLightLight
-        view_yourOrder.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        view_yourOrder.Location = New Point(93, 597)
-        view_yourOrder.Name = "view_yourOrder"
-        view_yourOrder.RowHeadersWidth = 51
-        view_yourOrder.RowTemplate.Height = 29
-        view_yourOrder.Size = New Size(1156, 364)
-        view_yourOrder.TabIndex = 25
+        BilDGV.BackgroundColor = SystemColors.ControlLightLight
+        BilDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        BilDGV.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4, Column5})
+        BilDGV.GridColor = SystemColors.ActiveBorder
+        BilDGV.Location = New Point(171, 620)
+        BilDGV.Name = "BilDGV"
+        BilDGV.RowHeadersWidth = 51
+        BilDGV.RowTemplate.Height = 29
+        BilDGV.Size = New Size(1156, 364)
+        BilDGV.TabIndex = 25
+        ' 
+        ' Column1
+        ' 
+        Column1.HeaderText = "ID"
+        Column1.MinimumWidth = 6
+        Column1.Name = "Column1"
+        Column1.Width = 125
+        ' 
+        ' Column2
+        ' 
+        Column2.HeaderText = "Product Name"
+        Column2.MinimumWidth = 6
+        Column2.Name = "Column2"
+        Column2.Width = 125
+        ' 
+        ' Column3
+        ' 
+        Column3.HeaderText = "Price"
+        Column3.MinimumWidth = 6
+        Column3.Name = "Column3"
+        Column3.Width = 125
+        ' 
+        ' Column4
+        ' 
+        Column4.HeaderText = "Quantity"
+        Column4.MinimumWidth = 6
+        Column4.Name = "Column4"
+        Column4.Width = 125
+        ' 
+        ' Column5
+        ' 
+        Column5.HeaderText = "Total"
+        Column5.MinimumWidth = 6
+        Column5.Name = "Column5"
+        Column5.Width = 125
         ' 
         ' btnAddBill
         ' 
         btnAddBill.BackColor = Color.Chocolate
         btnAddBill.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         btnAddBill.ForeColor = Color.Snow
-        btnAddBill.Location = New Point(1316, 451)
+        btnAddBill.Location = New Point(1310, 466)
         btnAddBill.Name = "btnAddBill"
         btnAddBill.Size = New Size(175, 44)
         btnAddBill.TabIndex = 24
@@ -172,7 +208,7 @@ Partial Class Seller
         ' txt_quantity_sell
         ' 
         txt_quantity_sell.Font = New Font("Arial Narrow", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
-        txt_quantity_sell.Location = New Point(1106, 458)
+        txt_quantity_sell.Location = New Point(1100, 473)
         txt_quantity_sell.Name = "txt_quantity_sell"
         txt_quantity_sell.Size = New Size(165, 34)
         txt_quantity_sell.TabIndex = 23
@@ -183,7 +219,7 @@ Partial Class Seller
         Label5.BackColor = Color.Transparent
         Label5.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point)
         Label5.ForeColor = Color.Chocolate
-        Label5.Location = New Point(956, 461)
+        Label5.Location = New Point(950, 476)
         Label5.Name = "Label5"
         Label5.Size = New Size(108, 31)
         Label5.TabIndex = 22
@@ -218,44 +254,12 @@ Partial Class Seller
         btnRefresh_sell.BackColor = Color.Chocolate
         btnRefresh_sell.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         btnRefresh_sell.ForeColor = Color.Snow
-        btnRefresh_sell.Location = New Point(329, 193)
+        btnRefresh_sell.Location = New Point(362, 325)
         btnRefresh_sell.Name = "btnRefresh_sell"
-        btnRefresh_sell.Size = New Size(175, 44)
+        btnRefresh_sell.Size = New Size(188, 51)
         btnRefresh_sell.TabIndex = 18
         btnRefresh_sell.Text = "Refresh"
         btnRefresh_sell.UseVisualStyleBackColor = False
-        ' 
-        ' txtCategoryName_sell
-        ' 
-        txtCategoryName_sell.Font = New Font("Arial Narrow", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
-        txtCategoryName_sell.Location = New Point(108, 353)
-        txtCategoryName_sell.Name = "txtCategoryName_sell"
-        txtCategoryName_sell.Size = New Size(240, 34)
-        txtCategoryName_sell.TabIndex = 17
-        ' 
-        ' Label2
-        ' 
-        Label2.AutoSize = True
-        Label2.BackColor = Color.Transparent
-        Label2.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point)
-        Label2.ForeColor = Color.Chocolate
-        Label2.Location = New Point(124, 301)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(196, 31)
-        Label2.TabIndex = 16
-        Label2.Text = "Categories Name"
-        ' 
-        ' btmAddCategory_sell
-        ' 
-        btmAddCategory_sell.BackColor = Color.Chocolate
-        btmAddCategory_sell.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        btmAddCategory_sell.ForeColor = Color.Snow
-        btmAddCategory_sell.Location = New Point(139, 413)
-        btmAddCategory_sell.Name = "btmAddCategory_sell"
-        btmAddCategory_sell.Size = New Size(175, 44)
-        btmAddCategory_sell.TabIndex = 15
-        btmAddCategory_sell.Text = "Add Category"
-        btmAddCategory_sell.UseVisualStyleBackColor = False
         ' 
         ' Label1
         ' 
@@ -269,14 +273,14 @@ Partial Class Seller
         Label1.TabIndex = 14
         Label1.Text = "  Manage Items  "
         ' 
-        ' CatCb
+        ' combo
         ' 
-        CatCb.Font = New Font("Arial Narrow", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
-        CatCb.FormattingEnabled = True
-        CatCb.Location = New Point(39, 193)
-        CatCb.Name = "CatCb"
-        CatCb.Size = New Size(240, 35)
-        CatCb.TabIndex = 13
+        combo.Font = New Font("Arial Narrow", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
+        combo.FormattingEnabled = True
+        combo.Location = New Point(64, 332)
+        combo.Name = "combo"
+        combo.Size = New Size(240, 35)
+        combo.TabIndex = 13
         ' 
         ' Seller
         ' 
@@ -290,13 +294,13 @@ Partial Class Seller
         Panel2.ResumeLayout(False)
         Panel2.PerformLayout()
         CType(ItemDGV, ComponentModel.ISupportInitialize).EndInit()
-        CType(view_yourOrder, ComponentModel.ISupportInitialize).EndInit()
+        CType(BilDGV, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents CatCb As ComboBox
+    Friend WithEvents combo As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents btmAddCategory_sell As Button
     Friend WithEvents Label2 As Label
@@ -307,10 +311,15 @@ Partial Class Seller
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label6 As Label
+    Friend WithEvents TotalBill As Label
     Friend WithEvents btn_print As Button
     Friend WithEvents btn_view_orders As Button
-    Friend WithEvents view_yourOrder As DataGridView
+    Friend WithEvents BilDGV As DataGridView
     Friend WithEvents btn_logout_seller As Button
     Friend WithEvents ItemDGV As DataGridView
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
 End Class
