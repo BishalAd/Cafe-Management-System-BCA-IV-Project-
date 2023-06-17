@@ -95,5 +95,20 @@ Public Class Seller
         End If
     End Sub
 
+    Private Sub btn_print_Click(sender As Object, e As EventArgs) Handles btn_print.Click
+        PrintPreviewDialog1.Show()
+    End Sub
 
+    Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
+        e.Graphics.DrawString("Cafe Shop", New Font("Arial", 22), Brushes.Chocolate, 335, 35)
+        e.Graphics.DrawString("******* Your Bill *************", New Font("Arial", 14), Brushes.BlueViolet, 350, 60)
+        'e.Graphics.DrawString("Seller:" + Userlabel.Text, New Font("Arial", 12), Brushes.BlueViolet, 700, 40)
+        Dim bm As New Bitmap(Me.BilDGV.Width, Me.BilDGV.Height)
+        BilDGV.DrawToBitmap(bm, New Rectangle(0, 0, Me.BilDGV.Width, Me.BilDGV.Height))
+        e.Graphics.DrawImage(bm, 0, 90)
+        e.Graphics.DrawString("Total Amount " + GrTotal.ToString(), New Font("Arial", 15), Brushes.Crimson, 325, 500)
+        e.Graphics.DrawString("************ Thanks For Visiting our Cafe *************************", New Font("Arial", 15), Brushes.Crimson, 130, 600)
+        e.Graphics.DrawString("************ Visit Again *************************", New Font("Arial", 15), Brushes.Crimson, 130, 600)
+
+    End Sub
 End Class

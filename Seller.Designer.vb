@@ -23,6 +23,7 @@ Partial Class Seller
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Seller))
         Panel1 = New Panel()
         btn_logout_seller = New Button()
         Panel2 = New Panel()
@@ -44,6 +45,8 @@ Partial Class Seller
         btnRefresh_sell = New Button()
         Label1 = New Label()
         combo = New ComboBox()
+        PrintPreviewDialog1 = New PrintPreviewDialog()
+        PrintDocument1 = New Printing.PrintDocument()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
         CType(ItemDGV, ComponentModel.ISupportInitialize).BeginInit()
@@ -282,6 +285,20 @@ Partial Class Seller
         combo.Size = New Size(240, 35)
         combo.TabIndex = 13
         ' 
+        ' PrintPreviewDialog1
+        ' 
+        PrintPreviewDialog1.AutoScrollMargin = New Size(0, 0)
+        PrintPreviewDialog1.AutoScrollMinSize = New Size(0, 0)
+        PrintPreviewDialog1.ClientSize = New Size(400, 300)
+        PrintPreviewDialog1.Document = PrintDocument1
+        PrintPreviewDialog1.Enabled = True
+        PrintPreviewDialog1.Icon = CType(resources.GetObject("PrintPreviewDialog1.Icon"), Icon)
+        PrintPreviewDialog1.Name = "PrintPreviewDialog1"
+        PrintPreviewDialog1.Visible = False
+        ' 
+        ' PrintDocument1
+        ' 
+        ' 
         ' Seller
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -322,4 +339,6 @@ Partial Class Seller
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
 End Class
