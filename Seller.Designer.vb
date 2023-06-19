@@ -90,9 +90,9 @@ Partial Class Seller
         Panel2.Controls.Add(btnRefresh_sell)
         Panel2.Controls.Add(Label1)
         Panel2.Controls.Add(combo)
-        Panel2.Location = New Point(203, 12)
+        Panel2.Location = New Point(258, 12)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(1718, 1017)
+        Panel2.Size = New Size(1632, 1009)
         Panel2.TabIndex = 0
         ' 
         ' ItemDGV
@@ -103,7 +103,7 @@ Partial Class Seller
         ItemDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         ItemDGV.Cursor = Cursors.Hand
         ItemDGV.EnableHeadersVisualStyles = False
-        ItemDGV.Location = New Point(785, 119)
+        ItemDGV.Location = New Point(709, 147)
         ItemDGV.Name = "ItemDGV"
         ItemDGV.RowHeadersWidth = 51
         DataGridViewCellStyle1.Font = New Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point)
@@ -119,7 +119,7 @@ Partial Class Seller
         TotalBill.BackColor = Color.Transparent
         TotalBill.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point)
         TotalBill.ForeColor = Color.Chocolate
-        TotalBill.Location = New Point(1456, 816)
+        TotalBill.Location = New Point(1434, 760)
         TotalBill.Name = "TotalBill"
         TotalBill.Size = New Size(67, 31)
         TotalBill.TabIndex = 28
@@ -130,7 +130,7 @@ Partial Class Seller
         btn_print.BackColor = Color.Chocolate
         btn_print.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         btn_print.ForeColor = Color.Snow
-        btn_print.Location = New Point(1402, 731)
+        btn_print.Location = New Point(1380, 675)
         btn_print.Name = "btn_print"
         btn_print.Size = New Size(175, 44)
         btn_print.TabIndex = 27
@@ -142,7 +142,7 @@ Partial Class Seller
         btn_view_orders.BackColor = Color.Chocolate
         btn_view_orders.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         btn_view_orders.ForeColor = Color.Snow
-        btn_view_orders.Location = New Point(1402, 900)
+        btn_view_orders.Location = New Point(1380, 844)
         btn_view_orders.Name = "btn_view_orders"
         btn_view_orders.Size = New Size(186, 53)
         btn_view_orders.TabIndex = 26
@@ -156,7 +156,7 @@ Partial Class Seller
         BilDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         BilDGV.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4, Column5})
         BilDGV.GridColor = SystemColors.ActiveBorder
-        BilDGV.Location = New Point(169, 622)
+        BilDGV.Location = New Point(110, 619)
         BilDGV.Name = "BilDGV"
         BilDGV.RowHeadersWidth = 51
         BilDGV.RowTemplate.Height = 29
@@ -198,7 +198,7 @@ Partial Class Seller
         btnAddBill.BackColor = Color.Chocolate
         btnAddBill.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         btnAddBill.ForeColor = Color.Snow
-        btnAddBill.Location = New Point(1310, 466)
+        btnAddBill.Location = New Point(1220, 500)
         btnAddBill.Name = "btnAddBill"
         btnAddBill.Size = New Size(175, 44)
         btnAddBill.TabIndex = 24
@@ -208,7 +208,7 @@ Partial Class Seller
         ' txt_quantity_sell
         ' 
         txt_quantity_sell.Font = New Font("Arial Narrow", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
-        txt_quantity_sell.Location = New Point(1100, 473)
+        txt_quantity_sell.Location = New Point(1010, 507)
         txt_quantity_sell.Name = "txt_quantity_sell"
         txt_quantity_sell.Size = New Size(165, 34)
         txt_quantity_sell.TabIndex = 23
@@ -219,7 +219,7 @@ Partial Class Seller
         Label5.BackColor = Color.Transparent
         Label5.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point)
         Label5.ForeColor = Color.Chocolate
-        Label5.Location = New Point(950, 476)
+        Label5.Location = New Point(860, 510)
         Label5.Name = "Label5"
         Label5.Size = New Size(108, 31)
         Label5.TabIndex = 22
@@ -231,7 +231,7 @@ Partial Class Seller
         Label4.BackColor = Color.Transparent
         Label4.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold Or FontStyle.Underline, GraphicsUnit.Point)
         Label4.ForeColor = Color.Chocolate
-        Label4.Location = New Point(542, 517)
+        Label4.Location = New Point(623, 568)
         Label4.Name = "Label4"
         Label4.Size = New Size(130, 31)
         Label4.TabIndex = 21
@@ -243,7 +243,7 @@ Partial Class Seller
         Label3.BackColor = Color.Transparent
         Label3.Font = New Font("Arial Narrow", 19.8000011F, FontStyle.Bold Or FontStyle.Underline, GraphicsUnit.Point)
         Label3.ForeColor = Color.Chocolate
-        Label3.Location = New Point(1100, 76)
+        Label3.Location = New Point(1073, 84)
         Label3.Name = "Label3"
         Label3.Size = New Size(149, 40)
         Label3.TabIndex = 20
@@ -254,7 +254,7 @@ Partial Class Seller
         btnRefresh_sell.BackColor = Color.Chocolate
         btnRefresh_sell.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         btnRefresh_sell.ForeColor = Color.Snow
-        btnRefresh_sell.Location = New Point(362, 325)
+        btnRefresh_sell.Location = New Point(355, 337)
         btnRefresh_sell.Name = "btnRefresh_sell"
         btnRefresh_sell.Size = New Size(188, 51)
         btnRefresh_sell.TabIndex = 18
@@ -267,7 +267,7 @@ Partial Class Seller
         Label1.BackColor = Color.Transparent
         Label1.Font = New Font("Arial Narrow", 19.8000011F, FontStyle.Bold Or FontStyle.Underline, GraphicsUnit.Point)
         Label1.ForeColor = Color.Chocolate
-        Label1.Location = New Point(800, 18)
+        Label1.Location = New Point(709, 19)
         Label1.Name = "Label1"
         Label1.Size = New Size(236, 40)
         Label1.TabIndex = 14
@@ -277,7 +277,7 @@ Partial Class Seller
         ' 
         combo.Font = New Font("Arial Narrow", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
         combo.FormattingEnabled = True
-        combo.Location = New Point(64, 332)
+        combo.Location = New Point(57, 344)
         combo.Name = "combo"
         combo.Size = New Size(240, 35)
         combo.TabIndex = 13
@@ -300,10 +300,11 @@ Partial Class Seller
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1924, 1055)
+        ClientSize = New Size(1902, 1033)
         Controls.Add(Panel1)
         Name = "Seller"
         Text = "Seller"
+        WindowState = FormWindowState.Maximized
         Panel1.ResumeLayout(False)
         Panel2.ResumeLayout(False)
         Panel2.PerformLayout()

@@ -258,9 +258,9 @@ Partial Class Add_New_Cagegory
         Panel1.Controls.Add(Label7)
         Panel1.Controls.Add(Panel2)
         Panel1.Controls.Add(Label1)
-        Panel1.Location = New Point(244, 12)
+        Panel1.Location = New Point(244, -2)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1679, 1052)
+        Panel1.Size = New Size(1659, 1066)
         Panel1.TabIndex = 16
         ' 
         ' Panel2
@@ -296,7 +296,7 @@ Partial Class Add_New_Cagegory
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.Chocolate
-        ClientSize = New Size(1924, 1055)
+        ClientSize = New Size(1902, 1033)
         Controls.Add(btnAddCat)
         Controls.Add(cattb)
         Controls.Add(Label2)
@@ -304,6 +304,7 @@ Partial Class Add_New_Cagegory
         Controls.Add(Panel1)
         Name = "Add_New_Cagegory"
         Text = "Add_New_Cagegory"
+        WindowState = FormWindowState.Maximized
         CType(ItemDGV, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()

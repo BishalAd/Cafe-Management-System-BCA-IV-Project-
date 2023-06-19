@@ -39,7 +39,7 @@ Partial Class Admin_login
         lbl_PName.BackColor = Color.Transparent
         lbl_PName.Font = New Font("Viner Hand ITC", 40F, FontStyle.Bold, GraphicsUnit.Point)
         lbl_PName.ForeColor = Color.Snow
-        lbl_PName.Location = New Point(200, 21)
+        lbl_PName.Location = New Point(580, 26)
         lbl_PName.Name = "lbl_PName"
         lbl_PName.Size = New Size(635, 216)
         lbl_PName.TabIndex = 0
@@ -51,7 +51,7 @@ Partial Class Admin_login
         lbl_UserName.BackColor = Color.Transparent
         lbl_UserName.Font = New Font("Viner Hand ITC", 22F, FontStyle.Bold, GraphicsUnit.Point)
         lbl_UserName.ForeColor = Color.Snow
-        lbl_UserName.Location = New Point(290, 295)
+        lbl_UserName.Location = New Point(670, 403)
         lbl_UserName.Name = "lbl_UserName"
         lbl_UserName.Size = New Size(225, 60)
         lbl_UserName.TabIndex = 2
@@ -63,7 +63,7 @@ Partial Class Admin_login
         lbl_password.BackColor = Color.Transparent
         lbl_password.Font = New Font("Viner Hand ITC", 22F, FontStyle.Bold, GraphicsUnit.Point)
         lbl_password.ForeColor = Color.Snow
-        lbl_password.Location = New Point(308, 393)
+        lbl_password.Location = New Point(670, 564)
         lbl_password.Name = "lbl_password"
         lbl_password.Size = New Size(186, 60)
         lbl_password.TabIndex = 3
@@ -74,7 +74,7 @@ Partial Class Admin_login
         btn_login.BackColor = Color.Chocolate
         btn_login.Font = New Font("Viner Hand ITC", 20F, FontStyle.Bold, GraphicsUnit.Point)
         btn_login.ForeColor = Color.Snow
-        btn_login.Location = New Point(493, 533)
+        btn_login.Location = New Point(850, 785)
         btn_login.Name = "btn_login"
         btn_login.Size = New Size(184, 66)
         btn_login.TabIndex = 4
@@ -86,7 +86,7 @@ Partial Class Admin_login
         txt_username.Font = New Font("Century Gothic", 16.2F, FontStyle.Regular, GraphicsUnit.Point)
         txt_username.ForeColor = Color.Black
         txt_username.HideSelection = False
-        txt_username.Location = New Point(509, 300)
+        txt_username.Location = New Point(889, 408)
         txt_username.Name = "txt_username"
         txt_username.Size = New Size(243, 41)
         txt_username.TabIndex = 5
@@ -95,7 +95,7 @@ Partial Class Admin_login
         ' 
         txt_password.Font = New Font("Century Gothic", 16.2F, FontStyle.Regular, GraphicsUnit.Point)
         txt_password.ForeColor = Color.Black
-        txt_password.Location = New Point(509, 398)
+        txt_password.Location = New Point(871, 569)
         txt_password.Name = "txt_password"
         txt_password.PasswordChar = "*"c
         txt_password.Size = New Size(257, 41)
@@ -107,7 +107,7 @@ Partial Class Admin_login
         CheckBox1.BackColor = Color.Transparent
         CheckBox1.Font = New Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point)
         CheckBox1.ForeColor = Color.Snow
-        CheckBox1.Location = New Point(519, 455)
+        CheckBox1.Location = New Point(881, 626)
         CheckBox1.Name = "CheckBox1"
         CheckBox1.Size = New Size(158, 28)
         CheckBox1.TabIndex = 7
@@ -119,9 +119,9 @@ Partial Class Admin_login
         Btn_back.BackColor = Color.Snow
         Btn_back.Font = New Font("Viner Hand ITC", 13.8F, FontStyle.Bold, GraphicsUnit.Point)
         Btn_back.ForeColor = Color.Black
-        Btn_back.Location = New Point(23, 576)
+        Btn_back.Location = New Point(62, 938)
         Btn_back.Name = "Btn_back"
-        Btn_back.Size = New Size(109, 40)
+        Btn_back.Size = New Size(152, 52)
         Btn_back.TabIndex = 8
         Btn_back.Text = " Back"
         Btn_back.UseVisualStyleBackColor = False
@@ -133,7 +133,7 @@ Partial Class Admin_login
         BackColor = Color.Snow
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
-        ClientSize = New Size(1182, 628)
+        ClientSize = New Size(1902, 1033)
         Controls.Add(Btn_back)
         Controls.Add(CheckBox1)
         Controls.Add(txt_password)
@@ -144,7 +144,9 @@ Partial Class Admin_login
         Controls.Add(lbl_PName)
         DoubleBuffered = True
         Name = "Admin_login"
+        StartPosition = FormStartPosition.WindowsDefaultBounds
         Text = "Admin_login"
+        WindowState = FormWindowState.Maximized
         ResumeLayout(False)
         PerformLayout()
     End Sub

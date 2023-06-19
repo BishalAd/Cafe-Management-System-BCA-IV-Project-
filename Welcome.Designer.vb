@@ -80,6 +80,7 @@ Partial Class Welcome
         DoubleBuffered = True
         Name = "Welcome"
         Text = "Welcome"
+        WindowState = FormWindowState.Maximized
         ResumeLayout(False)
         PerformLayout()
     End Sub
