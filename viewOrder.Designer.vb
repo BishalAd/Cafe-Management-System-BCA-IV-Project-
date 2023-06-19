@@ -22,9 +22,11 @@ Partial Class viewOrder
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Label1 = New Label()
-        Panel1 = New Panel()
         btn_back_order = New Button()
+        OrderDGV = New DataGridView()
+        CType(OrderDGV, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Label1
@@ -38,40 +40,51 @@ Partial Class viewOrder
         Label1.TabIndex = 1
         Label1.Text = "Order List"
         ' 
-        ' Panel1
-        ' 
-        Panel1.BackColor = Color.Snow
-        Panel1.Location = New Point(45, 63)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(676, 504)
-        Panel1.TabIndex = 2
-        ' 
         ' btn_back_order
         ' 
         btn_back_order.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        btn_back_order.Location = New Point(304, 587)
+        btn_back_order.Location = New Point(315, 695)
         btn_back_order.Name = "btn_back_order"
         btn_back_order.Size = New Size(146, 44)
         btn_back_order.TabIndex = 5
         btn_back_order.Text = "Back"
         btn_back_order.UseVisualStyleBackColor = True
         ' 
+        ' OrderDGV
+        ' 
+        OrderDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        OrderDGV.BackgroundColor = Color.Snow
+        OrderDGV.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None
+        OrderDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        OrderDGV.Cursor = Cursors.Hand
+        OrderDGV.EnableHeadersVisualStyles = False
+        OrderDGV.Location = New Point(27, 71)
+        OrderDGV.Name = "OrderDGV"
+        OrderDGV.RowHeadersWidth = 51
+        DataGridViewCellStyle1.Font = New Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        OrderDGV.RowsDefaultCellStyle = DataGridViewCellStyle1
+        OrderDGV.RowTemplate.Height = 29
+        OrderDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        OrderDGV.Size = New Size(764, 608)
+        OrderDGV.TabIndex = 31
+        ' 
         ' viewOrder
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.Chocolate
-        ClientSize = New Size(767, 643)
+        ClientSize = New Size(815, 751)
+        Controls.Add(OrderDGV)
         Controls.Add(btn_back_order)
-        Controls.Add(Panel1)
         Controls.Add(Label1)
         Name = "viewOrder"
         Text = "viewOrder"
+        CType(OrderDGV, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents btn_back_order As Button
+    Friend WithEvents OrderDGV As DataGridView
 End Class

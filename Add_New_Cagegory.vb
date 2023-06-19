@@ -60,7 +60,7 @@ Public Class Add_New_Cagegory
             MsgBox("Missing Information")
         Else
             Con.Open()
-            Dim query = "Insert into Item (name) values('" & txtName.Text & "', '" & combo.SelectedValue.ToString() & "', '" & txtPrice.Text & "', '" & txtQuantity.Text & "')"
+            Dim query = "INSERT INTO Item (name, Item_Cat, Item_Price, Item_Qty) VALUES ('" & txtName.Text & "', '" & combo.SelectedValue.ToString() & "', '" & txtPrice.Text & "', '" & txtQuantity.Text & "')"
             Dim cmd As SqlCommand
             cmd = New SqlCommand(query, Con)
             cmd.ExecuteNonQuery()
@@ -105,14 +105,19 @@ Public Class Add_New_Cagegory
         If combo.SelectedIndex = -1 Or txtName.Text = "" Or txtPrice.Text = "" Or txtQuantity.Text = "" Then
             MsgBox("Missing Information")
         Else
-            Con.Open()
-            Dim query = "UPDATE item SET name = '" & txtName.Text & "', Item_Cat = '" & combo.SelectedValue & "', Item_Price = " & txtPrice.Text & ", Item_Qty = " & txtQuantity.Text & " WHERE item_id = " & key & ""
-            Dim cmd As SqlCommand = New SqlCommand(query, Con)
-            cmd.ExecuteNonQuery()
-            MsgBox("Item Edited")
-            Con.Close()
-            Reset()
-            DisplayItem()
+            Try
+                Con.Open()
+                Dim query = "UPDATE item SET name = '" & txtName.Text & "', Item_Cat = '" & combo.SelectedValue & "', Item_Price = " & txtPrice.Text & ", Item_Qty = " & txtQuantity.Text & " WHERE item_id = " & key & ""
+                Dim cmd As SqlCommand = New SqlCommand(query, Con)
+                cmd.ExecuteNonQuery()
+                MsgBox("Item Edited")
+                Con.Close()
+                Reset()
+                DisplayItem()
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+
         End If
     End Sub
 

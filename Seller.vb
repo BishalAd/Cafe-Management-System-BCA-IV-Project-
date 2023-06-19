@@ -20,17 +20,20 @@ Public Class Seller
         Con.Close()
     End Sub
     Private Sub DisplayItem()
-        Con.Open()
-        Dim query = "Select * from item"
+        If Con.State = ConnectionState.Closed Then
+            Con.Open()
+        End If
+
+        Dim query = "SELECT * FROM item"
         Dim cmd = New SqlCommand(query, Con)
         Dim adapter = New SqlDataAdapter(cmd)
         Dim builder = New SqlCommandBuilder(adapter)
-        builder = New SqlCommandBuilder(adapter)
         Dim ds = New DataSet()
         adapter.Fill(ds)
         ItemDGV.DataSource = ds.Tables(0)
         Con.Close()
     End Sub
+
     Private Sub FilterByCategory()
         Con.Open()
         Dim query = "Select * from item where Item_Cat= '" & combo.SelectedValue.ToString() & "'"
@@ -59,10 +62,25 @@ Public Class Seller
     End Sub
     Dim ProdName
     Dim i = 0, GrTotal = 0, price, qty
+    Private Sub UpdateItem()
+        Try
+            Dim newQty = stock - Convert.ToInt32(txt_quantity_sell.Text)
+            Con.Open()
+            Dim query = "UPDATE item set Item_Qty = " & newQty & " WHERE item_id = " & key & ""
+            Dim cmd As SqlCommand = New SqlCommand(query, Con)
+            cmd.ExecuteNonQuery()
+            MsgBox("Item Edited")
+            Con.Close()
+            DisplayItem()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Sub
     Private Sub btnAddBill_Click(sender As Object, e As EventArgs) Handles btnAddBill.Click
-        If key = 0 Then
+        If key = 0 Or txt_quantity_sell.Text = "" Then
             MsgBox("Select a Item")
-        ElseIf qty > stock Then
+        ElseIf Convert.ToInt32(txt_quantity_sell.Text) > stock Then
             MsgBox("No Enough Stock")
         Else
             Dim rnum As Integer = BilDGV.Rows.Add()
@@ -75,6 +93,7 @@ Public Class Seller
             BilDGV.Rows.Item(rnum).Cells("Column5").Value = total
             GrTotal = GrTotal + total
             TotalBill.Text = "Rs " + Convert.ToString(GrTotal)
+            UpdateItem()
             txt_quantity_sell.Text = ""
             key = 0
         End If
@@ -94,8 +113,18 @@ Public Class Seller
             price = Convert.ToInt32(row.Cells(3).Value.ToString)
         End If
     End Sub
+    Private Sub AddBill()
+        Con.Open()
+        Dim query = "Insert into Tblorder values('" & DateTime.Today.Date & "', " & GrTotal & ")"
+        Dim cmd As SqlCommand
+        cmd = New SqlCommand(query, Con)
+        cmd.ExecuteNonQuery()
+        MsgBox("Bill Added")
+        Con.Close()
+    End Sub
 
     Private Sub btn_print_Click(sender As Object, e As EventArgs) Handles btn_print.Click
+        AddBill()
         PrintPreviewDialog1.Show()
     End Sub
 
@@ -110,5 +139,11 @@ Public Class Seller
         e.Graphics.DrawString("************ Thanks For Visiting our Cafe *************************", New Font("Arial", 15), Brushes.Crimson, 130, 600)
         e.Graphics.DrawString("************ Visit Again *************************", New Font("Arial", 15), Brushes.Crimson, 130, 600)
 
+    End Sub
+
+    Private Sub btn_view_orders_Click(sender As Object, e As EventArgs) Handles btn_view_orders.Click
+        Dim obj = New viewOrder
+        obj.Show()
+        Me.Hide()
     End Sub
 End Class

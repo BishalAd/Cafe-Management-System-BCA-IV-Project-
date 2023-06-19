@@ -221,6 +221,7 @@ Partial Class Add_New_Cagegory
         ' 
         ' ItemDGV
         ' 
+        ItemDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         ItemDGV.BackgroundColor = SystemColors.ControlLightLight
         ItemDGV.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None
         ItemDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
