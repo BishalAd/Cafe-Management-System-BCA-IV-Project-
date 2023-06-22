@@ -6,7 +6,7 @@
     End Sub
 
     Private Sub BtnSeller_Click(sender As Object, e As EventArgs) Handles BtnSeller.Click
-        Dim obj = New Seller
+        Dim obj = New Seller_login
         obj.Show()
         Me.Hide()
     End Sub

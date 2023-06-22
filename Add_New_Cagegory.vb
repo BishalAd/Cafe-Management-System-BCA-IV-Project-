@@ -25,16 +25,23 @@ Public Class Add_New_Cagegory
         txtPrice.Text = ""
     End Sub
     Private Sub FillCategory()
-        Con.Open()
-        Dim cmd = New SqlCommand("SELECT * FROM CategoryTbl", Con)
-        Dim adapter = New SqlDataAdapter(cmd)
-        Dim Tbl = New DataTable()
-        adapter.Fill(Tbl)
-        combo.DataSource = Tbl
-        combo.DisplayMember = "CatName"
-        combo.ValueMember = "CatName"
-        Con.Close()
+        Try
+            Con.Open()
+            Dim cmd = New SqlCommand("SELECT * FROM CategoryTbl", Con)
+            Dim adapter = New SqlDataAdapter(cmd)
+            Dim Tbl = New DataTable()
+            adapter.Fill(Tbl)
+            combo.DataSource = Tbl
+            combo.DisplayMember = "CatName"
+            combo.ValueMember = "CatName"
+        Catch ex As Exception
+            ' Handle the exception, display or log the error message.
+            MessageBox.Show("An error occurred while connecting to the database: " & ex.Message)
+        Finally
+            Con.Close()
+        End Try
     End Sub
+
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Reset()
     End Sub
@@ -44,17 +51,23 @@ Public Class Add_New_Cagegory
         DisplayItem()
     End Sub
     Private Sub DisplayItem()
-        Con.Open()
-        Dim query = "Select * from item"
-        Dim cmd = New SqlCommand(query, Con)
-        Dim adapter = New SqlDataAdapter(cmd)
-        Dim builder = New SqlCommandBuilder(adapter)
-        builder = New SqlCommandBuilder(adapter)
-        Dim ds = New DataSet()
-        adapter.Fill(ds)
-        ItemDGV.DataSource = ds.Tables(0)
-        Con.Close()
+        Try
+            Con.Open()
+            Dim query = "SELECT * FROM item"
+            Dim cmd = New SqlCommand(query, Con)
+            Dim adapter = New SqlDataAdapter(cmd)
+            Dim builder = New SqlCommandBuilder(adapter)
+            Dim ds = New DataSet()
+            adapter.Fill(ds)
+            ItemDGV.DataSource = ds.Tables(0)
+        Catch ex As Exception
+            ' Handle the exception, display or log the error message.
+            MessageBox.Show("An error occurred while connecting to the database: " & ex.Message)
+        Finally
+            Con.Close()
+        End Try
     End Sub
+
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         If combo.SelectedIndex = -1 Or txtName.Text = "" Or txtPrice.Text = "" Or txtQuantity.Text = "" Then
             MsgBox("Missing Information")
@@ -123,6 +136,18 @@ Public Class Add_New_Cagegory
 
     Private Sub btn_logout_admin_Click(sender As Object, e As EventArgs) Handles btn_logout_admin.Click
         Dim obj = New Admin_login
+        obj.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btnGotoSeller_Click(sender As Object, e As EventArgs) Handles btnGotoSeller.Click
+        Dim obj = New Seller_login
+        obj.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btnAddEmp_Click(sender As Object, e As EventArgs) Handles btnAddEmp.Click
+        Dim obj = New Add_Employee
         obj.Show()
         Me.Hide()
     End Sub

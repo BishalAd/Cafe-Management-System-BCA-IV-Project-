@@ -46,6 +46,9 @@ Partial Class Add_New_Cagegory
         Panel1 = New Panel()
         Panel2 = New Panel()
         txtName = New TextBox()
+        btnGotoSeller = New Button()
+        btnDeleteCat = New Button()
+        btnAddEmp = New Button()
         CType(ItemDGV, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
@@ -55,7 +58,7 @@ Partial Class Add_New_Cagegory
         ' 
         btnAddCat.BackColor = Color.Snow
         btnAddCat.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        btnAddCat.Location = New Point(27, 295)
+        btnAddCat.Location = New Point(27, 226)
         btnAddCat.Name = "btnAddCat"
         btnAddCat.Size = New Size(188, 53)
         btnAddCat.TabIndex = 19
@@ -65,7 +68,7 @@ Partial Class Add_New_Cagegory
         ' cattb
         ' 
         cattb.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        cattb.Location = New Point(27, 224)
+        cattb.Location = New Point(27, 155)
         cattb.Name = "cattb"
         cattb.Size = New Size(188, 34)
         cattb.TabIndex = 18
@@ -76,7 +79,7 @@ Partial Class Add_New_Cagegory
         Label2.BackColor = Color.Transparent
         Label2.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point)
         Label2.ForeColor = Color.Snow
-        Label2.Location = New Point(37, 147)
+        Label2.Location = New Point(37, 78)
         Label2.Name = "Label2"
         Label2.Size = New Size(171, 62)
         Label2.TabIndex = 17
@@ -212,9 +215,9 @@ Partial Class Add_New_Cagegory
         ' 
         btn_logout_admin.BackColor = Color.Snow
         btn_logout_admin.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        btn_logout_admin.Location = New Point(37, 867)
+        btn_logout_admin.Location = New Point(67, 908)
         btn_logout_admin.Name = "btn_logout_admin"
-        btn_logout_admin.Size = New Size(107, 44)
+        btn_logout_admin.Size = New Size(161, 44)
         btn_logout_admin.TabIndex = 20
         btn_logout_admin.Text = "Logout"
         btn_logout_admin.UseVisualStyleBackColor = False
@@ -291,17 +294,54 @@ Partial Class Add_New_Cagegory
         txtName.Size = New Size(232, 34)
         txtName.TabIndex = 8
         ' 
+        ' btnGotoSeller
+        ' 
+        btnGotoSeller.BackColor = Color.Snow
+        btnGotoSeller.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        btnGotoSeller.Location = New Point(67, 815)
+        btnGotoSeller.Name = "btnGotoSeller"
+        btnGotoSeller.Size = New Size(161, 44)
+        btnGotoSeller.TabIndex = 21
+        btnGotoSeller.Text = "Seller"
+        btnGotoSeller.UseVisualStyleBackColor = False
+        ' 
+        ' btnDeleteCat
+        ' 
+        btnDeleteCat.BackColor = Color.Snow
+        btnDeleteCat.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        btnDeleteCat.Location = New Point(27, 304)
+        btnDeleteCat.Name = "btnDeleteCat"
+        btnDeleteCat.Size = New Size(188, 53)
+        btnDeleteCat.TabIndex = 22
+        btnDeleteCat.Text = "Delete Category"
+        btnDeleteCat.UseVisualStyleBackColor = False
+        ' 
+        ' btnAddEmp
+        ' 
+        btnAddEmp.BackColor = Color.Snow
+        btnAddEmp.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        btnAddEmp.Location = New Point(67, 727)
+        btnAddEmp.Name = "btnAddEmp"
+        btnAddEmp.Size = New Size(161, 44)
+        btnAddEmp.TabIndex = 23
+        btnAddEmp.Text = "Add Employee"
+        btnAddEmp.UseVisualStyleBackColor = False
+        ' 
         ' Add_New_Cagegory
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.Chocolate
         ClientSize = New Size(1902, 1033)
+        Controls.Add(btnAddEmp)
+        Controls.Add(btnDeleteCat)
+        Controls.Add(btnGotoSeller)
         Controls.Add(btnAddCat)
         Controls.Add(cattb)
         Controls.Add(Label2)
         Controls.Add(btn_logout_admin)
         Controls.Add(Panel1)
+        DoubleBuffered = True
         Name = "Add_New_Cagegory"
         Text = "Add_New_Cagegory"
         WindowState = FormWindowState.Maximized
@@ -336,4 +376,7 @@ Partial Class Add_New_Cagegory
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents txtName As TextBox
+    Friend WithEvents btnGotoSeller As Button
+    Friend WithEvents btnDeleteCat As Button
+    Friend WithEvents btnAddEmp As Button
 End Class

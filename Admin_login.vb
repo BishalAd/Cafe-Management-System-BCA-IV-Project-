@@ -1,15 +1,27 @@
-﻿Public Class Admin_login
+﻿Imports System.Data.SqlClient
+Public Class Admin_login
+    Dim Con As SqlConnection = New SqlConnection("Data Source=DELL\SQLEXPRESS;Initial Catalog=Cafe;Integrated Security=True")
     Private Sub btn_login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
-        If txt_username.Text = "" Or txt_password.Text = "" Then
+        If txt_password.Text = "" Then
             MsgBox("Enter UserName and Password")
-        ElseIf txt_username.Text = "Admin" And txt_password.Text = "Password" Then
-            Dim obj = New Add_New_Cagegory
-            obj.Show()
-            Me.Hide()
         Else
-            MsgBox("Wrong UserName Or Password. Try Again...")
-            txt_username.Text = ""
-            txt_password.Text = ""
+            Con.Open()
+            Dim query = "select * from Admin_pass where Admin_Password = '" & txt_password.Text & "'"
+            Dim cmd As SqlCommand
+            cmd = New SqlCommand(query, Con)
+            Dim da As SqlDataAdapter = New SqlDataAdapter(cmd)
+            Dim ds As DataSet = New DataSet()
+            da.Fill(ds)
+            Dim a As Integer
+            a = ds.Tables(0).Rows.Count
+            If a = 0 Then
+                MsgBox("Wrong UserName Or Password")
+            Else
+                Dim obj = New Add_New_Cagegory
+                obj.Show()
+                Me.Hide()
+            End If
+            Con.Close()
         End If
     End Sub
 

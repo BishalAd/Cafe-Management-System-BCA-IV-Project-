@@ -4,7 +4,7 @@ Imports System.Xml.Schema
 Public Class Seller
     Dim Con As SqlConnection = New SqlConnection("Data Source=DELL\SQLEXPRESS;Initial Catalog=Cafe;Integrated Security=True")
     Private Sub btn_logout_seller_Click(sender As Object, e As EventArgs) Handles btn_logout_seller.Click
-        Dim obj = New Welcome
+        Dim obj = New Seller_login
         obj.Show()
         Me.Hide()
     End Sub
@@ -143,6 +143,18 @@ Public Class Seller
 
     Private Sub btn_view_orders_Click(sender As Object, e As EventArgs) Handles btn_view_orders.Click
         Dim obj = New viewOrder
+        obj.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btnGotoAdmin_Click(sender As Object, e As EventArgs) Handles btnGotoAdmin.Click
+        Dim obj = New Admin_login
+        obj.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btnHome_Click(sender As Object, e As EventArgs) Handles btnHome.Click
+        Dim obj = New Welcome
         obj.Show()
         Me.Hide()
     End Sub

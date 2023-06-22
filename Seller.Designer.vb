@@ -25,6 +25,8 @@ Partial Class Seller
         Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Seller))
         Panel1 = New Panel()
+        btnHome = New Button()
+        btnGotoAdmin = New Button()
         btn_logout_seller = New Button()
         Panel2 = New Panel()
         ItemDGV = New DataGridView()
@@ -56,6 +58,8 @@ Partial Class Seller
         ' Panel1
         ' 
         Panel1.BackColor = Color.Chocolate
+        Panel1.Controls.Add(btnHome)
+        Panel1.Controls.Add(btnGotoAdmin)
         Panel1.Controls.Add(btn_logout_seller)
         Panel1.Controls.Add(Panel2)
         Panel1.Location = New Point(0, 0)
@@ -63,13 +67,35 @@ Partial Class Seller
         Panel1.Size = New Size(1924, 1061)
         Panel1.TabIndex = 0
         ' 
+        ' btnHome
+        ' 
+        btnHome.BackColor = Color.Snow
+        btnHome.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        btnHome.Location = New Point(54, 735)
+        btnHome.Name = "btnHome"
+        btnHome.Size = New Size(161, 44)
+        btnHome.TabIndex = 25
+        btnHome.Text = "Home"
+        btnHome.UseVisualStyleBackColor = False
+        ' 
+        ' btnGotoAdmin
+        ' 
+        btnGotoAdmin.BackColor = Color.Snow
+        btnGotoAdmin.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        btnGotoAdmin.Location = New Point(54, 823)
+        btnGotoAdmin.Name = "btnGotoAdmin"
+        btnGotoAdmin.Size = New Size(161, 44)
+        btnGotoAdmin.TabIndex = 24
+        btnGotoAdmin.Text = "Admin"
+        btnGotoAdmin.UseVisualStyleBackColor = False
+        ' 
         ' btn_logout_seller
         ' 
         btn_logout_seller.BackColor = Color.Snow
         btn_logout_seller.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        btn_logout_seller.Location = New Point(44, 929)
+        btn_logout_seller.Location = New Point(58, 928)
         btn_logout_seller.Name = "btn_logout_seller"
-        btn_logout_seller.Size = New Size(107, 44)
+        btn_logout_seller.Size = New Size(157, 44)
         btn_logout_seller.TabIndex = 16
         btn_logout_seller.Text = "Logout"
         btn_logout_seller.UseVisualStyleBackColor = False
@@ -231,7 +257,7 @@ Partial Class Seller
         Label4.BackColor = Color.Transparent
         Label4.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold Or FontStyle.Underline, GraphicsUnit.Point)
         Label4.ForeColor = Color.Chocolate
-        Label4.Location = New Point(623, 568)
+        Label4.Location = New Point(636, 567)
         Label4.Name = "Label4"
         Label4.Size = New Size(130, 31)
         Label4.TabIndex = 21
@@ -339,4 +365,6 @@ Partial Class Seller
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
+    Friend WithEvents btnHome As Button
+    Friend WithEvents btnGotoAdmin As Button
 End Class
