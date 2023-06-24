@@ -14,7 +14,6 @@ Public Class Seller_login
         Else
             Con.Open()
             Dim query = "select * from EmployeeTbl where EmpName = '" & txt_SellerUsername.Text & "' and EmpPassword ='" & txt_SellerPassword.Text & "'"
-            'Dim query As String = "SELECT COUNT(*) FROM EmployeeTbl WHERE EmpName = '" & txt_SellerUsername.Text & "' AND EmpPassword = '" & txt_SellerUsername.Text & "'"
             Dim cmd As SqlCommand
             cmd = New SqlCommand(query, Con)
             Dim da As SqlDataAdapter = New SqlDataAdapter(cmd)
@@ -23,6 +22,8 @@ Public Class Seller_login
             Dim a As Integer
             a = ds.Tables(0).Rows.Count
             If a = 0 Then
+                txt_SellerUsername.Text = ""
+                txt_SellerPassword.Text = ""
                 MsgBox("Wrong UserName Or Password")
             Else
                 Dim obj = New Seller

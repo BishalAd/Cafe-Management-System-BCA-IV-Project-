@@ -15,6 +15,7 @@ Public Class Admin_login
             Dim a As Integer
             a = ds.Tables(0).Rows.Count
             If a = 0 Then
+                txt_password.Text = ""
                 MsgBox("Wrong UserName Or Password")
             Else
                 Dim obj = New Add_New_Cagegory

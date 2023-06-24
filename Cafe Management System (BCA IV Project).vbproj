@@ -4,7 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <RootNamespace>Cafe_Management_System__BCA_IV_Project_</RootNamespace>
-    <StartupObject>Cafe_Management_System__BCA_IV_Project_.Add_Employee</StartupObject>
+    <StartupObject>Cafe_Management_System__BCA_IV_Project_.Welcome</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
   </PropertyGroup>

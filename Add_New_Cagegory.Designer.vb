@@ -49,9 +49,21 @@ Partial Class Add_New_Cagegory
         btnGotoSeller = New Button()
         btnDeleteCat = New Button()
         btnAddEmp = New Button()
+        PictureBox1 = New PictureBox()
+        PictureBox2 = New PictureBox()
+        PictureBox3 = New PictureBox()
+        Panel3 = New Panel()
+        Panel4 = New Panel()
+        Panel5 = New Panel()
         CType(ItemDGV, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
+        Panel3.SuspendLayout()
+        Panel4.SuspendLayout()
+        Panel5.SuspendLayout()
         SuspendLayout()
         ' 
         ' btnAddCat
@@ -215,7 +227,7 @@ Partial Class Add_New_Cagegory
         ' 
         btn_logout_admin.BackColor = Color.Snow
         btn_logout_admin.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        btn_logout_admin.Location = New Point(67, 908)
+        btn_logout_admin.Location = New Point(43, 2)
         btn_logout_admin.Name = "btn_logout_admin"
         btn_logout_admin.Size = New Size(161, 44)
         btn_logout_admin.TabIndex = 20
@@ -298,7 +310,7 @@ Partial Class Add_New_Cagegory
         ' 
         btnGotoSeller.BackColor = Color.Snow
         btnGotoSeller.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        btnGotoSeller.Location = New Point(67, 815)
+        btnGotoSeller.Location = New Point(43, 2)
         btnGotoSeller.Name = "btnGotoSeller"
         btnGotoSeller.Size = New Size(161, 44)
         btnGotoSeller.TabIndex = 21
@@ -320,12 +332,73 @@ Partial Class Add_New_Cagegory
         ' 
         btnAddEmp.BackColor = Color.Snow
         btnAddEmp.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        btnAddEmp.Location = New Point(67, 727)
+        btnAddEmp.Location = New Point(46, 3)
         btnAddEmp.Name = "btnAddEmp"
         btnAddEmp.Size = New Size(161, 44)
         btnAddEmp.TabIndex = 23
         btnAddEmp.Text = "Add Employee"
         btnAddEmp.UseVisualStyleBackColor = False
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.BackColor = Color.Transparent
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(6, 3)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(47, 44)
+        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox1.TabIndex = 24
+        PictureBox1.TabStop = False
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
+        PictureBox2.Location = New Point(3, 2)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(47, 44)
+        PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox2.TabIndex = 25
+        PictureBox2.TabStop = False
+        ' 
+        ' PictureBox3
+        ' 
+        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
+        PictureBox3.Location = New Point(3, 2)
+        PictureBox3.Name = "PictureBox3"
+        PictureBox3.Size = New Size(47, 44)
+        PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox3.TabIndex = 26
+        PictureBox3.TabStop = False
+        ' 
+        ' Panel3
+        ' 
+        Panel3.BackColor = Color.Snow
+        Panel3.Controls.Add(btnAddEmp)
+        Panel3.Controls.Add(PictureBox1)
+        Panel3.Location = New Point(24, 677)
+        Panel3.Name = "Panel3"
+        Panel3.Size = New Size(207, 49)
+        Panel3.TabIndex = 27
+        ' 
+        ' Panel4
+        ' 
+        Panel4.BackColor = Color.Snow
+        Panel4.Controls.Add(btnGotoSeller)
+        Panel4.Controls.Add(PictureBox2)
+        Panel4.Location = New Point(24, 784)
+        Panel4.Name = "Panel4"
+        Panel4.Size = New Size(207, 49)
+        Panel4.TabIndex = 28
+        ' 
+        ' Panel5
+        ' 
+        Panel5.BackColor = Color.Snow
+        Panel5.Controls.Add(btn_logout_admin)
+        Panel5.Controls.Add(PictureBox3)
+        Panel5.Location = New Point(24, 891)
+        Panel5.Name = "Panel5"
+        Panel5.Size = New Size(207, 49)
+        Panel5.TabIndex = 29
         ' 
         ' Add_New_Cagegory
         ' 
@@ -333,13 +406,13 @@ Partial Class Add_New_Cagegory
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.Chocolate
         ClientSize = New Size(1902, 1033)
-        Controls.Add(btnAddEmp)
+        Controls.Add(Panel5)
+        Controls.Add(Panel4)
+        Controls.Add(Panel3)
         Controls.Add(btnDeleteCat)
-        Controls.Add(btnGotoSeller)
         Controls.Add(btnAddCat)
         Controls.Add(cattb)
         Controls.Add(Label2)
-        Controls.Add(btn_logout_admin)
         Controls.Add(Panel1)
         DoubleBuffered = True
         Name = "Add_New_Cagegory"
@@ -350,6 +423,12 @@ Partial Class Add_New_Cagegory
         Panel1.PerformLayout()
         Panel2.ResumeLayout(False)
         Panel2.PerformLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
+        Panel3.ResumeLayout(False)
+        Panel4.ResumeLayout(False)
+        Panel5.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -379,4 +458,10 @@ Partial Class Add_New_Cagegory
     Friend WithEvents btnGotoSeller As Button
     Friend WithEvents btnDeleteCat As Button
     Friend WithEvents btnAddEmp As Button
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Panel5 As Panel
 End Class

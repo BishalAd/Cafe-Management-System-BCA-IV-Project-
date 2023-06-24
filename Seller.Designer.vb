@@ -49,18 +49,30 @@ Partial Class Seller
         combo = New ComboBox()
         PrintPreviewDialog1 = New PrintPreviewDialog()
         PrintDocument1 = New Printing.PrintDocument()
+        Panel3 = New Panel()
+        PictureBox1 = New PictureBox()
+        Panel4 = New Panel()
+        PictureBox2 = New PictureBox()
+        Panel5 = New Panel()
+        PictureBox3 = New PictureBox()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
         CType(ItemDGV, ComponentModel.ISupportInitialize).BeginInit()
         CType(BilDGV, ComponentModel.ISupportInitialize).BeginInit()
+        Panel3.SuspendLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        Panel4.SuspendLayout()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
+        Panel5.SuspendLayout()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel1
         ' 
         Panel1.BackColor = Color.Chocolate
-        Panel1.Controls.Add(btnHome)
-        Panel1.Controls.Add(btnGotoAdmin)
-        Panel1.Controls.Add(btn_logout_seller)
+        Panel1.Controls.Add(Panel5)
+        Panel1.Controls.Add(Panel4)
+        Panel1.Controls.Add(Panel3)
         Panel1.Controls.Add(Panel2)
         Panel1.Location = New Point(0, 0)
         Panel1.Name = "Panel1"
@@ -71,7 +83,7 @@ Partial Class Seller
         ' 
         btnHome.BackColor = Color.Snow
         btnHome.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        btnHome.Location = New Point(54, 735)
+        btnHome.Location = New Point(46, 2)
         btnHome.Name = "btnHome"
         btnHome.Size = New Size(161, 44)
         btnHome.TabIndex = 25
@@ -82,7 +94,7 @@ Partial Class Seller
         ' 
         btnGotoAdmin.BackColor = Color.Snow
         btnGotoAdmin.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        btnGotoAdmin.Location = New Point(54, 823)
+        btnGotoAdmin.Location = New Point(46, 4)
         btnGotoAdmin.Name = "btnGotoAdmin"
         btnGotoAdmin.Size = New Size(161, 44)
         btnGotoAdmin.TabIndex = 24
@@ -93,7 +105,7 @@ Partial Class Seller
         ' 
         btn_logout_seller.BackColor = Color.Snow
         btn_logout_seller.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        btn_logout_seller.Location = New Point(58, 928)
+        btn_logout_seller.Location = New Point(50, 3)
         btn_logout_seller.Name = "btn_logout_seller"
         btn_logout_seller.Size = New Size(157, 44)
         btn_logout_seller.TabIndex = 16
@@ -322,6 +334,69 @@ Partial Class Seller
         ' PrintDocument1
         ' 
         ' 
+        ' Panel3
+        ' 
+        Panel3.BackColor = Color.Snow
+        Panel3.Controls.Add(PictureBox1)
+        Panel3.Controls.Add(btnHome)
+        Panel3.Location = New Point(21, 600)
+        Panel3.Name = "Panel3"
+        Panel3.Size = New Size(207, 49)
+        Panel3.TabIndex = 28
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.BackColor = Color.Transparent
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(6, 3)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(47, 44)
+        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox1.TabIndex = 24
+        PictureBox1.TabStop = False
+        ' 
+        ' Panel4
+        ' 
+        Panel4.BackColor = Color.Snow
+        Panel4.Controls.Add(PictureBox2)
+        Panel4.Controls.Add(btnGotoAdmin)
+        Panel4.Location = New Point(21, 742)
+        Panel4.Name = "Panel4"
+        Panel4.Size = New Size(207, 49)
+        Panel4.TabIndex = 29
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.BackColor = Color.Transparent
+        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
+        PictureBox2.Location = New Point(6, 3)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(47, 44)
+        PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox2.TabIndex = 24
+        PictureBox2.TabStop = False
+        ' 
+        ' Panel5
+        ' 
+        Panel5.BackColor = Color.Snow
+        Panel5.Controls.Add(PictureBox3)
+        Panel5.Controls.Add(btn_logout_seller)
+        Panel5.Location = New Point(21, 885)
+        Panel5.Name = "Panel5"
+        Panel5.Size = New Size(207, 49)
+        Panel5.TabIndex = 29
+        ' 
+        ' PictureBox3
+        ' 
+        PictureBox3.BackColor = Color.Transparent
+        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
+        PictureBox3.Location = New Point(6, 3)
+        PictureBox3.Name = "PictureBox3"
+        PictureBox3.Size = New Size(47, 44)
+        PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox3.TabIndex = 24
+        PictureBox3.TabStop = False
+        ' 
         ' Seller
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -336,6 +411,12 @@ Partial Class Seller
         Panel2.PerformLayout()
         CType(ItemDGV, ComponentModel.ISupportInitialize).EndInit()
         CType(BilDGV, ComponentModel.ISupportInitialize).EndInit()
+        Panel3.ResumeLayout(False)
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        Panel4.ResumeLayout(False)
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
+        Panel5.ResumeLayout(False)
+        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -367,4 +448,10 @@ Partial Class Seller
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
     Friend WithEvents btnHome As Button
     Friend WithEvents btnGotoAdmin As Button
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

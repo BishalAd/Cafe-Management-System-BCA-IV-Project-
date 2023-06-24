@@ -30,8 +30,10 @@ Partial Class Admin_login
         CheckBox1 = New CheckBox()
         Btn_back = New Button()
         Panel1 = New Panel()
+        PictureBox2 = New PictureBox()
         lbl_UserName = New Label()
         Panel1.SuspendLayout()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' lbl_PName
@@ -98,7 +100,7 @@ Partial Class Admin_login
         Btn_back.BackColor = Color.Snow
         Btn_back.Font = New Font("Viner Hand ITC", 13.8F, FontStyle.Bold, GraphicsUnit.Point)
         Btn_back.ForeColor = Color.Black
-        Btn_back.Location = New Point(62, 938)
+        Btn_back.Location = New Point(58, 861)
         Btn_back.Name = "Btn_back"
         Btn_back.Size = New Size(152, 52)
         Btn_back.TabIndex = 8
@@ -108,6 +110,7 @@ Partial Class Admin_login
         ' Panel1
         ' 
         Panel1.BackColor = Color.SeaShell
+        Panel1.Controls.Add(PictureBox2)
         Panel1.Controls.Add(lbl_PName)
         Panel1.Controls.Add(lbl_UserName)
         Panel1.Controls.Add(btn_login)
@@ -118,6 +121,16 @@ Partial Class Admin_login
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(664, 1019)
         Panel1.TabIndex = 9
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
+        PictureBox2.Location = New Point(575, 611)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(89, 64)
+        PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox2.TabIndex = 18
+        PictureBox2.TabStop = False
         ' 
         ' lbl_UserName
         ' 
@@ -148,6 +161,7 @@ Partial Class Admin_login
         WindowState = FormWindowState.Maximized
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -159,4 +173,5 @@ Partial Class Admin_login
     Friend WithEvents Btn_back As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents lbl_UserName As Label
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

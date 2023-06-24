@@ -22,6 +22,7 @@ Partial Class Seller_login
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Seller_login))
         CheckBox1 = New CheckBox()
         txt_SellerPassword = New TextBox()
         txt_SellerUsername = New TextBox()
@@ -31,8 +32,12 @@ Partial Class Seller_login
         btn_SellerLogin = New Button()
         Btn_back = New Button()
         Panel1 = New Panel()
+        PictureBox2 = New PictureBox()
+        PictureBox1 = New PictureBox()
         Label1 = New Label()
         Panel1.SuspendLayout()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' CheckBox1
@@ -131,6 +136,8 @@ Partial Class Seller_login
         ' Panel1
         ' 
         Panel1.BackColor = Color.SeaShell
+        Panel1.Controls.Add(PictureBox2)
+        Panel1.Controls.Add(PictureBox1)
         Panel1.Controls.Add(Label1)
         Panel1.Controls.Add(btn_SellerLogin)
         Panel1.Controls.Add(lbl_PName)
@@ -143,6 +150,26 @@ Partial Class Seller_login
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(734, 1041)
         Panel1.TabIndex = 16
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
+        PictureBox2.Location = New Point(579, 702)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(89, 64)
+        PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox2.TabIndex = 17
+        PictureBox2.TabStop = False
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(579, 560)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(89, 64)
+        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox1.TabIndex = 16
+        PictureBox1.TabStop = False
         ' 
         ' Label1
         ' 
@@ -171,6 +198,8 @@ Partial Class Seller_login
         WindowState = FormWindowState.Maximized
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -184,4 +213,6 @@ Partial Class Seller_login
     Friend WithEvents Btn_back As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
