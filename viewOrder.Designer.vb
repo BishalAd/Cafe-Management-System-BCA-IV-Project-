@@ -26,6 +26,7 @@ Partial Class viewOrder
         Label1 = New Label()
         btn_back_order = New Button()
         OrderDGV = New DataGridView()
+        DateTimePicker1 = New DateTimePicker()
         CType(OrderDGV, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -34,7 +35,7 @@ Partial Class viewOrder
         Label1.AutoSize = True
         Label1.Font = New Font("Arial Narrow", 19.8000011F, FontStyle.Bold Or FontStyle.Underline, GraphicsUnit.Point)
         Label1.ForeColor = Color.Snow
-        Label1.Location = New Point(284, 9)
+        Label1.Location = New Point(1044, 20)
         Label1.Name = "Label1"
         Label1.Size = New Size(152, 40)
         Label1.TabIndex = 1
@@ -43,7 +44,7 @@ Partial Class viewOrder
         ' btn_back_order
         ' 
         btn_back_order.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        btn_back_order.Location = New Point(315, 695)
+        btn_back_order.Location = New Point(732, 964)
         btn_back_order.Name = "btn_back_order"
         btn_back_order.Size = New Size(146, 44)
         btn_back_order.TabIndex = 5
@@ -58,27 +59,38 @@ Partial Class viewOrder
         OrderDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         OrderDGV.Cursor = Cursors.Hand
         OrderDGV.EnableHeadersVisualStyles = False
-        OrderDGV.Location = New Point(27, 71)
+        OrderDGV.Location = New Point(128, 98)
         OrderDGV.Name = "OrderDGV"
         OrderDGV.RowHeadersWidth = 51
         DataGridViewCellStyle1.Font = New Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point)
         OrderDGV.RowsDefaultCellStyle = DataGridViewCellStyle1
         OrderDGV.RowTemplate.Height = 29
         OrderDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        OrderDGV.Size = New Size(764, 608)
+        OrderDGV.Size = New Size(1357, 806)
         OrderDGV.TabIndex = 31
+        ' 
+        ' DateTimePicker1
+        ' 
+        DateTimePicker1.CalendarFont = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
+        DateTimePicker1.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
+        DateTimePicker1.Location = New Point(1493, 115)
+        DateTimePicker1.Name = "DateTimePicker1"
+        DateTimePicker1.Size = New Size(397, 38)
+        DateTimePicker1.TabIndex = 32
         ' 
         ' viewOrder
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.Chocolate
-        ClientSize = New Size(815, 751)
+        ClientSize = New Size(1902, 1033)
+        Controls.Add(DateTimePicker1)
         Controls.Add(OrderDGV)
         Controls.Add(btn_back_order)
         Controls.Add(Label1)
         Name = "viewOrder"
         Text = "viewOrder"
+        WindowState = FormWindowState.Maximized
         CType(OrderDGV, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
@@ -87,4 +99,5 @@ Partial Class viewOrder
     Friend WithEvents Label1 As Label
     Friend WithEvents btn_back_order As Button
     Friend WithEvents OrderDGV As DataGridView
+    Friend WithEvents DateTimePicker1 As DateTimePicker
 End Class

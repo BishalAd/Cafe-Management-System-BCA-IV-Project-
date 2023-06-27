@@ -22,23 +22,24 @@ Partial Class Seller
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Seller))
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Panel1 = New Panel()
-        btnHome = New Button()
-        btnGotoAdmin = New Button()
+        Panel5 = New Panel()
+        PictureBox3 = New PictureBox()
         btn_logout_seller = New Button()
+        Panel4 = New Panel()
+        PictureBox2 = New PictureBox()
+        btnGotoAdmin = New Button()
+        Panel3 = New Panel()
+        PictureBox1 = New PictureBox()
+        btnHome = New Button()
         Panel2 = New Panel()
         ItemDGV = New DataGridView()
         TotalBill = New Label()
         btn_print = New Button()
         btn_view_orders = New Button()
         BilDGV = New DataGridView()
-        Column1 = New DataGridViewTextBoxColumn()
-        Column2 = New DataGridViewTextBoxColumn()
-        Column3 = New DataGridViewTextBoxColumn()
-        Column4 = New DataGridViewTextBoxColumn()
-        Column5 = New DataGridViewTextBoxColumn()
         btnAddBill = New Button()
         txt_quantity_sell = New TextBox()
         Label5 = New Label()
@@ -49,22 +50,21 @@ Partial Class Seller
         combo = New ComboBox()
         PrintPreviewDialog1 = New PrintPreviewDialog()
         PrintDocument1 = New Printing.PrintDocument()
-        Panel3 = New Panel()
-        PictureBox1 = New PictureBox()
-        Panel4 = New Panel()
-        PictureBox2 = New PictureBox()
-        Panel5 = New Panel()
-        PictureBox3 = New PictureBox()
+        Column1 = New DataGridViewTextBoxColumn()
+        Column2 = New DataGridViewTextBoxColumn()
+        Column3 = New DataGridViewTextBoxColumn()
+        Column4 = New DataGridViewTextBoxColumn()
+        Column5 = New DataGridViewTextBoxColumn()
         Panel1.SuspendLayout()
+        Panel5.SuspendLayout()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
+        Panel4.SuspendLayout()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
+        Panel3.SuspendLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         Panel2.SuspendLayout()
         CType(ItemDGV, ComponentModel.ISupportInitialize).BeginInit()
         CType(BilDGV, ComponentModel.ISupportInitialize).BeginInit()
-        Panel3.SuspendLayout()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
-        Panel4.SuspendLayout()
-        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
-        Panel5.SuspendLayout()
-        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel1
@@ -79,16 +79,58 @@ Partial Class Seller
         Panel1.Size = New Size(1924, 1061)
         Panel1.TabIndex = 0
         ' 
-        ' btnHome
+        ' Panel5
         ' 
-        btnHome.BackColor = Color.Snow
-        btnHome.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        btnHome.Location = New Point(46, 2)
-        btnHome.Name = "btnHome"
-        btnHome.Size = New Size(161, 44)
-        btnHome.TabIndex = 25
-        btnHome.Text = "Home"
-        btnHome.UseVisualStyleBackColor = False
+        Panel5.BackColor = Color.Snow
+        Panel5.Controls.Add(PictureBox3)
+        Panel5.Controls.Add(btn_logout_seller)
+        Panel5.Location = New Point(21, 885)
+        Panel5.Name = "Panel5"
+        Panel5.Size = New Size(207, 49)
+        Panel5.TabIndex = 29
+        ' 
+        ' PictureBox3
+        ' 
+        PictureBox3.BackColor = Color.Transparent
+        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
+        PictureBox3.Location = New Point(6, 3)
+        PictureBox3.Name = "PictureBox3"
+        PictureBox3.Size = New Size(47, 44)
+        PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox3.TabIndex = 24
+        PictureBox3.TabStop = False
+        ' 
+        ' btn_logout_seller
+        ' 
+        btn_logout_seller.BackColor = Color.Snow
+        btn_logout_seller.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        btn_logout_seller.Location = New Point(50, 3)
+        btn_logout_seller.Name = "btn_logout_seller"
+        btn_logout_seller.Size = New Size(157, 44)
+        btn_logout_seller.TabIndex = 16
+        btn_logout_seller.Text = "Logout"
+        btn_logout_seller.UseVisualStyleBackColor = False
+        ' 
+        ' Panel4
+        ' 
+        Panel4.BackColor = Color.Snow
+        Panel4.Controls.Add(PictureBox2)
+        Panel4.Controls.Add(btnGotoAdmin)
+        Panel4.Location = New Point(21, 742)
+        Panel4.Name = "Panel4"
+        Panel4.Size = New Size(207, 49)
+        Panel4.TabIndex = 29
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.BackColor = Color.Transparent
+        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
+        PictureBox2.Location = New Point(6, 3)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(47, 44)
+        PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox2.TabIndex = 24
+        PictureBox2.TabStop = False
         ' 
         ' btnGotoAdmin
         ' 
@@ -101,16 +143,37 @@ Partial Class Seller
         btnGotoAdmin.Text = "Admin"
         btnGotoAdmin.UseVisualStyleBackColor = False
         ' 
-        ' btn_logout_seller
+        ' Panel3
         ' 
-        btn_logout_seller.BackColor = Color.Snow
-        btn_logout_seller.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        btn_logout_seller.Location = New Point(50, 3)
-        btn_logout_seller.Name = "btn_logout_seller"
-        btn_logout_seller.Size = New Size(157, 44)
-        btn_logout_seller.TabIndex = 16
-        btn_logout_seller.Text = "Logout"
-        btn_logout_seller.UseVisualStyleBackColor = False
+        Panel3.BackColor = Color.Snow
+        Panel3.Controls.Add(PictureBox1)
+        Panel3.Controls.Add(btnHome)
+        Panel3.Location = New Point(21, 600)
+        Panel3.Name = "Panel3"
+        Panel3.Size = New Size(207, 49)
+        Panel3.TabIndex = 28
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.BackColor = Color.Transparent
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(6, 3)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(47, 44)
+        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox1.TabIndex = 24
+        PictureBox1.TabStop = False
+        ' 
+        ' btnHome
+        ' 
+        btnHome.BackColor = Color.Snow
+        btnHome.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        btnHome.Location = New Point(46, 2)
+        btnHome.Name = "btnHome"
+        btnHome.Size = New Size(161, 44)
+        btnHome.TabIndex = 25
+        btnHome.Text = "Home"
+        btnHome.UseVisualStyleBackColor = False
         ' 
         ' Panel2
         ' 
@@ -200,36 +263,6 @@ Partial Class Seller
         BilDGV.RowTemplate.Height = 29
         BilDGV.Size = New Size(1156, 364)
         BilDGV.TabIndex = 25
-        ' 
-        ' Column1
-        ' 
-        Column1.HeaderText = "ID"
-        Column1.MinimumWidth = 6
-        Column1.Name = "Column1"
-        ' 
-        ' Column2
-        ' 
-        Column2.HeaderText = "Product Name"
-        Column2.MinimumWidth = 6
-        Column2.Name = "Column2"
-        ' 
-        ' Column3
-        ' 
-        Column3.HeaderText = "Price"
-        Column3.MinimumWidth = 6
-        Column3.Name = "Column3"
-        ' 
-        ' Column4
-        ' 
-        Column4.HeaderText = "Quantity"
-        Column4.MinimumWidth = 6
-        Column4.Name = "Column4"
-        ' 
-        ' Column5
-        ' 
-        Column5.HeaderText = "Total"
-        Column5.MinimumWidth = 6
-        Column5.Name = "Column5"
         ' 
         ' btnAddBill
         ' 
@@ -334,68 +367,35 @@ Partial Class Seller
         ' PrintDocument1
         ' 
         ' 
-        ' Panel3
+        ' Column1
         ' 
-        Panel3.BackColor = Color.Snow
-        Panel3.Controls.Add(PictureBox1)
-        Panel3.Controls.Add(btnHome)
-        Panel3.Location = New Point(21, 600)
-        Panel3.Name = "Panel3"
-        Panel3.Size = New Size(207, 49)
-        Panel3.TabIndex = 28
+        Column1.HeaderText = "ID"
+        Column1.MinimumWidth = 6
+        Column1.Name = "Column1"
         ' 
-        ' PictureBox1
+        ' Column2
         ' 
-        PictureBox1.BackColor = Color.Transparent
-        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(6, 3)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(47, 44)
-        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox1.TabIndex = 24
-        PictureBox1.TabStop = False
+        Column2.HeaderText = "Product Name"
+        Column2.MinimumWidth = 6
+        Column2.Name = "Column2"
         ' 
-        ' Panel4
+        ' Column3
         ' 
-        Panel4.BackColor = Color.Snow
-        Panel4.Controls.Add(PictureBox2)
-        Panel4.Controls.Add(btnGotoAdmin)
-        Panel4.Location = New Point(21, 742)
-        Panel4.Name = "Panel4"
-        Panel4.Size = New Size(207, 49)
-        Panel4.TabIndex = 29
+        Column3.HeaderText = "Quantity"
+        Column3.MinimumWidth = 6
+        Column3.Name = "Column3"
         ' 
-        ' PictureBox2
+        ' Column4
         ' 
-        PictureBox2.BackColor = Color.Transparent
-        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(6, 3)
-        PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(47, 44)
-        PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox2.TabIndex = 24
-        PictureBox2.TabStop = False
+        Column4.HeaderText = "Price"
+        Column4.MinimumWidth = 6
+        Column4.Name = "Column4"
         ' 
-        ' Panel5
+        ' Column5
         ' 
-        Panel5.BackColor = Color.Snow
-        Panel5.Controls.Add(PictureBox3)
-        Panel5.Controls.Add(btn_logout_seller)
-        Panel5.Location = New Point(21, 885)
-        Panel5.Name = "Panel5"
-        Panel5.Size = New Size(207, 49)
-        Panel5.TabIndex = 29
-        ' 
-        ' PictureBox3
-        ' 
-        PictureBox3.BackColor = Color.Transparent
-        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
-        PictureBox3.Location = New Point(6, 3)
-        PictureBox3.Name = "PictureBox3"
-        PictureBox3.Size = New Size(47, 44)
-        PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox3.TabIndex = 24
-        PictureBox3.TabStop = False
+        Column5.HeaderText = "Total"
+        Column5.MinimumWidth = 6
+        Column5.Name = "Column5"
         ' 
         ' Seller
         ' 
@@ -407,16 +407,16 @@ Partial Class Seller
         Text = "Seller"
         WindowState = FormWindowState.Maximized
         Panel1.ResumeLayout(False)
+        Panel5.ResumeLayout(False)
+        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
+        Panel4.ResumeLayout(False)
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
+        Panel3.ResumeLayout(False)
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         Panel2.ResumeLayout(False)
         Panel2.PerformLayout()
         CType(ItemDGV, ComponentModel.ISupportInitialize).EndInit()
         CType(BilDGV, ComponentModel.ISupportInitialize).EndInit()
-        Panel3.ResumeLayout(False)
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
-        Panel4.ResumeLayout(False)
-        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
-        Panel5.ResumeLayout(False)
-        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -439,11 +439,6 @@ Partial Class Seller
     Friend WithEvents BilDGV As DataGridView
     Friend WithEvents btn_logout_seller As Button
     Friend WithEvents ItemDGV As DataGridView
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
     Friend WithEvents btnHome As Button
@@ -454,4 +449,9 @@ Partial Class Seller
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Panel3 As Panel
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
 End Class

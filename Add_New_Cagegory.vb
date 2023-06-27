@@ -50,6 +50,7 @@ Public Class Add_New_Cagegory
         combo.SelectedIndex = 0
         txtQuantity.Text = ""
         txtPrice.Text = ""
+        txtCostPrice.Text = ""
     End Sub
 
     Private Sub FillCategory()
@@ -82,13 +83,24 @@ Public Class Add_New_Cagegory
     Private Sub DisplayItem()
         Try
             Con.Open()
-            Dim query = "SELECT item.*, CategoryTbl.CatName FROM item INNER JOIN CategoryTbl ON item.Item_Cat = CategoryTbl.CatName"
+            Dim query = "SELECT item.item_id, item.name, item.Item_Cat, item.Item_Qty, item.Cost_Price, item.Item_Price FROM item INNER JOIN CategoryTbl ON item.Item_Cat = CategoryTbl.CatName"
             Dim cmd = New SqlCommand(query, Con)
             Dim adapter = New SqlDataAdapter(cmd)
             Dim builder = New SqlCommandBuilder(adapter)
             Dim ds = New DataSet()
             adapter.Fill(ds)
             ItemDGV.DataSource = ds.Tables(0)
+
+            ' Configure the DataGridView columns
+            ItemDGV.Columns("item_id").HeaderText = "Item ID"
+            ItemDGV.Columns("name").HeaderText = "Item Name"
+            ItemDGV.Columns("Item_Cat").HeaderText = "Category"
+            ItemDGV.Columns("Item_Qty").HeaderText = "Quantity"
+            ItemDGV.Columns("Cost_Price").HeaderText = "Cost Price"
+            ItemDGV.Columns("Item_Price").HeaderText = "Item Price"
+
+            ' Hide the unnecessary columns
+            '  ItemDGV.Columns("CatName").Visible = False
         Catch ex As Exception
             ' Handle the exception, display or log the error message.
             MessageBox.Show("An error occurred while connecting to the database: " & ex.Message)
@@ -96,6 +108,7 @@ Public Class Add_New_Cagegory
             Con.Close()
         End Try
     End Sub
+
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         If combo.SelectedIndex = -1 Or txtName.Text = "" Or txtPrice.Text = "" Or txtQuantity.Text = "" Then
@@ -106,12 +119,13 @@ Public Class Add_New_Cagegory
                 MsgBox("Food item already exists.")
             Else
                 Con.Open()
-                Dim query = "INSERT INTO item (name, Item_Cat, Item_Price, Item_Qty) VALUES (@Name, @Item_Cat, @Item_Price, @Item_Qty)"
+                Dim query = "INSERT INTO item (name, Item_Cat, Item_Price, Item_Qty, Cost_Price) VALUES (@Name, @Item_Cat, @Item_Price, @Item_Qty, @Cost_Price)"
                 Dim cmd As SqlCommand = New SqlCommand(query, Con)
                 cmd.Parameters.AddWithValue("@Name", txtName.Text)
                 cmd.Parameters.AddWithValue("@Item_Cat", combo.SelectedValue.ToString())
                 cmd.Parameters.AddWithValue("@Item_Price", txtPrice.Text)
                 cmd.Parameters.AddWithValue("@Item_Qty", txtQuantity.Text)
+                cmd.Parameters.AddWithValue("@Cost_Price", txtCostPrice.Text)
                 cmd.ExecuteNonQuery()
                 MsgBox("Item Added")
                 Con.Close()
@@ -145,8 +159,9 @@ Public Class Add_New_Cagegory
         Dim row As DataGridViewRow = ItemDGV.Rows(e.RowIndex)
         txtName.Text = row.Cells(1).Value.ToString
         combo.SelectedValue = row.Cells(2).Value.ToString
-        txtPrice.Text = row.Cells(3).Value.ToString
-        txtQuantity.Text = row.Cells(4).Value.ToString
+        txtQuantity.Text = row.Cells(3).Value.ToString
+        txtCostPrice.Text = row.Cells(4).Value.ToString
+        txtPrice.Text = row.Cells(5).Value.ToString
         If txtName.Text = "" Then
             key = 0
         Else
@@ -176,7 +191,7 @@ Public Class Add_New_Cagegory
         Else
             Try
                 Con.Open()
-                Dim query = "UPDATE item SET name = '" & txtName.Text & "', Item_Cat = '" & combo.SelectedValue & "', Item_Price = " & txtPrice.Text & ", Item_Qty = " & txtQuantity.Text & " WHERE item_id = " & key & ""
+                Dim query = "UPDATE item SET name = '" & txtName.Text & "', Item_Cat = '" & combo.SelectedValue & "', Item_Price = " & txtPrice.Text & ", Item_Qty = " & txtQuantity.Text & ", Cost_Price = " & txtCostPrice.Text & " WHERE item_id = " & key & ""
                 Dim cmd As SqlCommand = New SqlCommand(query, Con)
                 cmd.ExecuteNonQuery()
                 MsgBox("Item Edited")
