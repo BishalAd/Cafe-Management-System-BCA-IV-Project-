@@ -35,11 +35,17 @@ Partial Class Seller
         PictureBox1 = New PictureBox()
         btnHome = New Button()
         Panel2 = New Panel()
+        slbl = New Label()
         ItemDGV = New DataGridView()
         TotalBill = New Label()
         btn_print = New Button()
         btn_view_orders = New Button()
         BilDGV = New DataGridView()
+        Column1 = New DataGridViewTextBoxColumn()
+        Column2 = New DataGridViewTextBoxColumn()
+        Column3 = New DataGridViewTextBoxColumn()
+        Column4 = New DataGridViewTextBoxColumn()
+        Column5 = New DataGridViewTextBoxColumn()
         btnAddBill = New Button()
         txt_quantity_sell = New TextBox()
         Label5 = New Label()
@@ -50,11 +56,7 @@ Partial Class Seller
         combo = New ComboBox()
         PrintPreviewDialog1 = New PrintPreviewDialog()
         PrintDocument1 = New Printing.PrintDocument()
-        Column1 = New DataGridViewTextBoxColumn()
-        Column2 = New DataGridViewTextBoxColumn()
-        Column3 = New DataGridViewTextBoxColumn()
-        Column4 = New DataGridViewTextBoxColumn()
-        Column5 = New DataGridViewTextBoxColumn()
+        Label6 = New Label()
         Panel1.SuspendLayout()
         Panel5.SuspendLayout()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
@@ -178,6 +180,8 @@ Partial Class Seller
         ' Panel2
         ' 
         Panel2.BackColor = Color.Snow
+        Panel2.Controls.Add(Label6)
+        Panel2.Controls.Add(slbl)
         Panel2.Controls.Add(ItemDGV)
         Panel2.Controls.Add(TotalBill)
         Panel2.Controls.Add(btn_print)
@@ -195,6 +199,15 @@ Partial Class Seller
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(1632, 1009)
         Panel2.TabIndex = 0
+        ' 
+        ' slbl
+        ' 
+        slbl.AutoSize = True
+        slbl.Location = New Point(110, 19)
+        slbl.Name = "slbl"
+        slbl.Size = New Size(52, 20)
+        slbl.TabIndex = 31
+        slbl.Text = "sname"
         ' 
         ' ItemDGV
         ' 
@@ -263,6 +276,36 @@ Partial Class Seller
         BilDGV.RowTemplate.Height = 29
         BilDGV.Size = New Size(1156, 364)
         BilDGV.TabIndex = 25
+        ' 
+        ' Column1
+        ' 
+        Column1.HeaderText = "ID"
+        Column1.MinimumWidth = 6
+        Column1.Name = "Column1"
+        ' 
+        ' Column2
+        ' 
+        Column2.HeaderText = "Product Name"
+        Column2.MinimumWidth = 6
+        Column2.Name = "Column2"
+        ' 
+        ' Column3
+        ' 
+        Column3.HeaderText = "Quantity"
+        Column3.MinimumWidth = 6
+        Column3.Name = "Column3"
+        ' 
+        ' Column4
+        ' 
+        Column4.HeaderText = "Price"
+        Column4.MinimumWidth = 6
+        Column4.Name = "Column4"
+        ' 
+        ' Column5
+        ' 
+        Column5.HeaderText = "Total"
+        Column5.MinimumWidth = 6
+        Column5.Name = "Column5"
         ' 
         ' btnAddBill
         ' 
@@ -367,35 +410,14 @@ Partial Class Seller
         ' PrintDocument1
         ' 
         ' 
-        ' Column1
+        ' Label6
         ' 
-        Column1.HeaderText = "ID"
-        Column1.MinimumWidth = 6
-        Column1.Name = "Column1"
-        ' 
-        ' Column2
-        ' 
-        Column2.HeaderText = "Product Name"
-        Column2.MinimumWidth = 6
-        Column2.Name = "Column2"
-        ' 
-        ' Column3
-        ' 
-        Column3.HeaderText = "Quantity"
-        Column3.MinimumWidth = 6
-        Column3.Name = "Column3"
-        ' 
-        ' Column4
-        ' 
-        Column4.HeaderText = "Price"
-        Column4.MinimumWidth = 6
-        Column4.Name = "Column4"
-        ' 
-        ' Column5
-        ' 
-        Column5.HeaderText = "Total"
-        Column5.MinimumWidth = 6
-        Column5.Name = "Column5"
+        Label6.AutoSize = True
+        Label6.Location = New Point(24, 19)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(52, 20)
+        Label6.TabIndex = 32
+        Label6.Text = "sname"
         ' 
         ' Seller
         ' 
@@ -454,4 +476,6 @@ Partial Class Seller
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents slbl As Label
+    Friend WithEvents Label6 As Label
 End Class

@@ -119,7 +119,7 @@ Public Class Add_New_Cagegory
                 MsgBox("Food item already exists.")
             Else
                 Con.Open()
-                Dim query = "INSERT INTO item (name, Item_Cat, Item_Price, Item_Qty, Cost_Price) VALUES (@Name, @Item_Cat, @Item_Price, @Item_Qty, @Cost_Price)"
+                Dim query = "INSERT INTO item  VALUES (@Name, @Item_Cat , @Item_Qty, @Item_Price , @Cost_Price)"
                 Dim cmd As SqlCommand = New SqlCommand(query, Con)
                 cmd.Parameters.AddWithValue("@Name", txtName.Text)
                 cmd.Parameters.AddWithValue("@Item_Cat", combo.SelectedValue.ToString())

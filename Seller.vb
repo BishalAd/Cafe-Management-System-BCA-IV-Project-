@@ -3,6 +3,9 @@ Imports System.Xml.Schema
 Imports System.Graphic
 
 Public Class Seller
+    Public Property UserName As String
+
+    'Public UserName As String
     Dim Con As SqlConnection = New SqlConnection("Data Source=DELL\SQLEXPRESS;Initial Catalog=Cafe;Integrated Security=True")
     Private Sub btn_logout_seller_Click(sender As Object, e As EventArgs) Handles btn_logout_seller.Click
         Dim obj = New Seller_login
@@ -71,10 +74,9 @@ Public Class Seller
     End Sub
 
     Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
-        DisplayItem()
-        FillCategory()
 
     End Sub
+
     Dim ProdName
     Dim i = 0, GrTotal = 0, price, qty
     Private Sub UpdateItem()
@@ -128,23 +130,25 @@ Public Class Seller
             price = Convert.ToInt32(row.Cells(4).Value.ToString)
         End If
     End Sub
-    Public Property SellerName As String
+    'Public Property SellerName As String
     Private Sub AddBill()
-        Using Con As SqlConnection = New SqlConnection("Data Source=DELL\SQLEXPRESS;Initial Catalog=Cafe;Integrated Security=True")
-            Try
-                Con.Open()
-                Dim query As String = "INSERT INTO Tblorder (orddate, ordamt, SellerName) VALUES (@OrderDate, @OrderAmount, @SellerName)"
-                Dim cmd As SqlCommand = New SqlCommand(query, Con)
-                cmd.Parameters.AddWithValue("@SellerName", Seller_login.SellerName) ' Access the SellerName property directly from the Seller_login class
-                cmd.Parameters.AddWithValue("@OrderDate", DateTime.Today.Date)
-                cmd.Parameters.AddWithValue("@OrderAmount", GrTotal)
-                cmd.ExecuteNonQuery()
-                MsgBox("Bill Added")
-                BilDGV.Rows.Clear()
-            Catch ex As Exception
-                MessageBox.Show("An error occurred while adding the bill: " & ex.Message)
-            End Try
-        End Using
+        'Using Con As SqlConnection = New SqlConnection("Data Source=DELL\SQLEXPRESS;Initial Catalog=Cafe;Integrated Security=True")
+        Try
+            Con.Open()
+            Dim query As String = "INSERT INTO Tblorder (orddate, ordamt, SellerName) VALUES (@OrderDate, @OrderAmount, @SellerName)"
+            Dim cmd As SqlCommand = New SqlCommand(query, Con)
+            'cmd.Parameters.AddWithValue("@SellerName", SellerName)
+
+            cmd.Parameters.AddWithValue("@SellerName", UserName)
+            cmd.Parameters.AddWithValue("@OrderDate", DateTime.Now.Date)
+            cmd.Parameters.AddWithValue("@OrderAmount", GrTotal)
+            cmd.ExecuteNonQuery()
+            MsgBox("Bill Added")
+            'BilDGV.Rows.Clear()
+        Catch ex As Exception
+            MessageBox.Show("An error occurred while adding the bill: " & ex.Message)
+        End Try
+        'End Using
     End Sub
 
     Private Sub btn_print_Click(sender As Object, e As EventArgs) Handles btn_print.Click
@@ -224,8 +228,9 @@ Public Class Seller
             e.Graphics.DrawString(price, tableContentFont, contentBrush, priceRect, New StringFormat With {.Alignment = StringAlignment.Far, .LineAlignment = StringAlignment.Center})
             e.Graphics.DrawString(total, tableContentFont, contentBrush, totalRect, New StringFormat With {.Alignment = StringAlignment.Far, .LineAlignment = StringAlignment.Center})
         Next rowIndex
-        Dim sellerName As String = CType(Application.OpenForms("Seller_login"), Seller_login).SellerName
-        e.Graphics.DrawString("Seller: " & sellerName, contentFont, Brushes.BlueViolet, 700, 40)
+        '  Dim sellerName As String = CType(Application.OpenForms("Seller_login"), Seller_login).u
+        e.Graphics.DrawString("Seller: " & UserName, contentFont, Brushes.BlueViolet, 700, 40)
+
         ' Total Amount
         Dim totalAmountY As Integer = startY + BilDGV.Rows.Count * rowHeight + 20
         e.Graphics.DrawString("Total Amount: " & GrTotal.ToString(), contentFont, Brushes.Crimson, 325, totalAmountY)
@@ -253,5 +258,11 @@ Public Class Seller
         Dim obj = New Welcome
         obj.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub Seller_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DisplayItem()
+        FillCategory()
+        slbl.Text = UserName
     End Sub
 End Class

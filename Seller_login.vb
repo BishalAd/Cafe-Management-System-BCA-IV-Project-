@@ -1,17 +1,14 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class Seller_login
+
     Dim Con As SqlConnection = New SqlConnection("Data Source=DELL\SQLEXPRESS;Initial Catalog=Cafe;Integrated Security=True")
-
-    ' Public property to store the seller name
-    Public Property SellerName As String
-
     Private Sub Btn_back_Click(sender As Object, e As EventArgs) Handles Btn_back.Click
         Dim obj = New Welcome
         obj.Show()
         Me.Hide()
     End Sub
-
+    'Dim username As String = txt_SellerUsername.Text
     Private Sub btn_SellerLogin_Click(sender As Object, e As EventArgs) Handles btn_SellerLogin.Click
         If txt_SellerUsername.Text = "" Or txt_SellerPassword.Text = "" Then
             MsgBox("Enter UserName or Password.")
@@ -30,10 +27,8 @@ Public Class Seller_login
                 txt_SellerPassword.Text = ""
                 MsgBox("Wrong UserName Or Password")
             Else
-                ' Set the SellerName property with the logged-in seller name
-                SellerName = txt_SellerUsername.Text
-
-                Dim obj = New Seller
+                Dim obj As New Seller
+                obj.UserName = txt_SellerUsername.Text
                 obj.Show()
                 Me.Hide()
             End If
@@ -47,5 +42,9 @@ Public Class Seller_login
         Else
             txt_SellerPassword.PasswordChar = ""
         End If
+    End Sub
+
+    Private Sub Seller_login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class
