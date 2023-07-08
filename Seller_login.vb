@@ -2,7 +2,7 @@
 
 Public Class Seller_login
 
-    Dim Con As SqlConnection = New SqlConnection("Data Source=DELL\SQLEXPRESS;Initial Catalog=Cafe;Integrated Security=True")
+    Dim Con As SqlConnection = New SqlConnection("Data Source=DELL\SQLEXPRESS;Initial Catalog=CMS;Integrated Security=True")
     Private Sub Btn_back_Click(sender As Object, e As EventArgs) Handles Btn_back.Click
         Dim obj = New Welcome
         obj.Show()

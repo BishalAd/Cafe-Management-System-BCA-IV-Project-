@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class Add_New_Cagegory
-    Dim Con As SqlConnection = New SqlConnection("Data Source=DELL\SQLEXPRESS;Initial Catalog=Cafe;Integrated Security=True")
+    Dim Con As SqlConnection = New SqlConnection("Data Source=DELL\SQLEXPRESS;Initial Catalog=CMS;Integrated Security=True")
     Dim key As Integer = 0
 
     Private Sub btnAddCat_Click(sender As Object, e As EventArgs) Handles btnAddCat.Click

@@ -6,7 +6,7 @@ Public Class Seller
     Public Property UserName As String
 
     'Public UserName As String
-    Dim Con As SqlConnection = New SqlConnection("Data Source=DELL\SQLEXPRESS;Initial Catalog=Cafe;Integrated Security=True")
+    Dim Con As SqlConnection = New SqlConnection("Data Source=DELL\SQLEXPRESS;Initial Catalog=CMS;Integrated Security=True")
     Private Sub btn_logout_seller_Click(sender As Object, e As EventArgs) Handles btn_logout_seller.Click
         Dim obj = New Seller_login
         obj.Show()
@@ -34,7 +34,6 @@ Public Class Seller
             adapter.Fill(ds)
             ItemDGV.DataSource = ds.Tables(0)
 
-            ' Configure the DataGridView columns
             ItemDGV.Columns("item_id").HeaderText = "Item ID"
             ItemDGV.Columns("name").HeaderText = "Item Name"
             ItemDGV.Columns("Item_Cat").HeaderText = "Category"
@@ -102,6 +101,7 @@ Public Class Seller
         Else
             Dim rnum As Integer = BilDGV.Rows.Add()
             Dim total = Convert.ToInt32(txt_quantity_sell.Text) * price
+            'Dim profit = Convert.ToInt32(txt_quantity_sell.Text) * cp
             i = i + 1
             BilDGV.Rows.Item(rnum).Cells("Column1").Value = i
             BilDGV.Rows.Item(rnum).Cells("Column2").Value = ProdName
@@ -109,6 +109,7 @@ Public Class Seller
             BilDGV.Rows.Item(rnum).Cells("Column4").Value = price
             BilDGV.Rows.Item(rnum).Cells("Column5").Value = total
             GrTotal = GrTotal + total
+            'PrTotal = PrTotal  + profit
             TotalBill.Text = "Rs " + Convert.ToString(GrTotal)
             UpdateItem()
             txt_quantity_sell.Text = ""
@@ -130,25 +131,20 @@ Public Class Seller
             price = Convert.ToInt32(row.Cells(4).Value.ToString)
         End If
     End Sub
-    'Public Property SellerName As String
     Private Sub AddBill()
-        'Using Con As SqlConnection = New SqlConnection("Data Source=DELL\SQLEXPRESS;Initial Catalog=Cafe;Integrated Security=True")
         Try
             Con.Open()
             Dim query As String = "INSERT INTO Tblorder (orddate, ordamt, SellerName) VALUES (@OrderDate, @OrderAmount, @SellerName)"
             Dim cmd As SqlCommand = New SqlCommand(query, Con)
-            'cmd.Parameters.AddWithValue("@SellerName", SellerName)
 
             cmd.Parameters.AddWithValue("@SellerName", UserName)
             cmd.Parameters.AddWithValue("@OrderDate", DateTime.Now.Date)
             cmd.Parameters.AddWithValue("@OrderAmount", GrTotal)
             cmd.ExecuteNonQuery()
             MsgBox("Bill Added")
-            'BilDGV.Rows.Clear()
         Catch ex As Exception
             MessageBox.Show("An error occurred while adding the bill: " & ex.Message)
         End Try
-        'End Using
     End Sub
 
     Private Sub btn_print_Click(sender As Object, e As EventArgs) Handles btn_print.Click
@@ -245,7 +241,6 @@ Public Class Seller
     Private Sub btn_view_orders_Click(sender As Object, e As EventArgs) Handles btn_view_orders.Click
         Dim obj = New viewOrder
         obj.Show()
-        Me.Hide()
     End Sub
 
     Private Sub btnGotoAdmin_Click(sender As Object, e As EventArgs) Handles btnGotoAdmin.Click
@@ -264,5 +259,9 @@ Public Class Seller
         DisplayItem()
         FillCategory()
         slbl.Text = UserName
+    End Sub
+
+    Private Sub Clear_Click(sender As Object, e As EventArgs) Handles Clear.Click
+
     End Sub
 End Class

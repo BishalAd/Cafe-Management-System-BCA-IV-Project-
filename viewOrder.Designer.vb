@@ -27,6 +27,8 @@ Partial Class viewOrder
         btn_back_order = New Button()
         OrderDGV = New DataGridView()
         DateTimePicker1 = New DateTimePicker()
+        TotalSum = New Label()
+        Label2 = New Label()
         CType(OrderDGV, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -43,13 +45,15 @@ Partial Class viewOrder
         ' 
         ' btn_back_order
         ' 
-        btn_back_order.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        btn_back_order.Location = New Point(732, 964)
+        btn_back_order.BackColor = Color.Snow
+        btn_back_order.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point)
+        btn_back_order.ForeColor = Color.Chocolate
+        btn_back_order.Location = New Point(758, 923)
         btn_back_order.Name = "btn_back_order"
-        btn_back_order.Size = New Size(146, 44)
+        btn_back_order.Size = New Size(174, 56)
         btn_back_order.TabIndex = 5
         btn_back_order.Text = "Back"
-        btn_back_order.UseVisualStyleBackColor = True
+        btn_back_order.UseVisualStyleBackColor = False
         ' 
         ' OrderDGV
         ' 
@@ -78,12 +82,36 @@ Partial Class viewOrder
         DateTimePicker1.Size = New Size(397, 38)
         DateTimePicker1.TabIndex = 32
         ' 
+        ' TotalSum
+        ' 
+        TotalSum.AutoSize = True
+        TotalSum.Font = New Font("Centaur", 24F, FontStyle.Bold, GraphicsUnit.Point)
+        TotalSum.ForeColor = Color.Snow
+        TotalSum.Location = New Point(1665, 681)
+        TotalSum.Name = "TotalSum"
+        TotalSum.Size = New Size(108, 45)
+        TotalSum.TabIndex = 33
+        TotalSum.Text = "Total"
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Font = New Font("Centaur", 24F, FontStyle.Bold, GraphicsUnit.Point)
+        Label2.ForeColor = Color.Snow
+        Label2.Location = New Point(1630, 608)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(196, 45)
+        Label2.TabIndex = 34
+        Label2.Text = "Total Sales"
+        ' 
         ' viewOrder
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.Chocolate
         ClientSize = New Size(1902, 1033)
+        Controls.Add(Label2)
+        Controls.Add(TotalSum)
         Controls.Add(DateTimePicker1)
         Controls.Add(OrderDGV)
         Controls.Add(btn_back_order)
@@ -100,4 +128,6 @@ Partial Class viewOrder
     Friend WithEvents btn_back_order As Button
     Friend WithEvents OrderDGV As DataGridView
     Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents TotalSum As Label
+    Friend WithEvents Label2 As Label
 End Class

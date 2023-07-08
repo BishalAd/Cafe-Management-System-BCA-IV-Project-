@@ -25,6 +25,7 @@ Partial Class Seller
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Seller))
         Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Panel1 = New Panel()
+        PictureBox4 = New PictureBox()
         Panel5 = New Panel()
         PictureBox3 = New PictureBox()
         btn_logout_seller = New Button()
@@ -35,6 +36,7 @@ Partial Class Seller
         PictureBox1 = New PictureBox()
         btnHome = New Button()
         Panel2 = New Panel()
+        Label6 = New Label()
         slbl = New Label()
         ItemDGV = New DataGridView()
         TotalBill = New Label()
@@ -56,8 +58,9 @@ Partial Class Seller
         combo = New ComboBox()
         PrintPreviewDialog1 = New PrintPreviewDialog()
         PrintDocument1 = New Printing.PrintDocument()
-        Label6 = New Label()
+        Clear = New Button()
         Panel1.SuspendLayout()
+        CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
         Panel5.SuspendLayout()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         Panel4.SuspendLayout()
@@ -72,6 +75,7 @@ Partial Class Seller
         ' Panel1
         ' 
         Panel1.BackColor = Color.Chocolate
+        Panel1.Controls.Add(PictureBox4)
         Panel1.Controls.Add(Panel5)
         Panel1.Controls.Add(Panel4)
         Panel1.Controls.Add(Panel3)
@@ -80,6 +84,16 @@ Partial Class Seller
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(1924, 1061)
         Panel1.TabIndex = 0
+        ' 
+        ' PictureBox4
+        ' 
+        PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
+        PictureBox4.Location = New Point(-2, 31)
+        PictureBox4.Name = "PictureBox4"
+        PictureBox4.Size = New Size(254, 280)
+        PictureBox4.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox4.TabIndex = 30
+        PictureBox4.TabStop = False
         ' 
         ' Panel5
         ' 
@@ -180,6 +194,7 @@ Partial Class Seller
         ' Panel2
         ' 
         Panel2.BackColor = Color.Snow
+        Panel2.Controls.Add(Clear)
         Panel2.Controls.Add(Label6)
         Panel2.Controls.Add(slbl)
         Panel2.Controls.Add(ItemDGV)
@@ -200,14 +215,27 @@ Partial Class Seller
         Panel2.Size = New Size(1632, 1009)
         Panel2.TabIndex = 0
         ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.Font = New Font("Century", 13.8F, FontStyle.Bold, GraphicsUnit.Point)
+        Label6.ForeColor = Color.Chocolate
+        Label6.Location = New Point(14, 19)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(176, 28)
+        Label6.TabIndex = 32
+        Label6.Text = "Seller Name : "
+        ' 
         ' slbl
         ' 
         slbl.AutoSize = True
-        slbl.Location = New Point(110, 19)
+        slbl.Font = New Font("Century", 13.8F, FontStyle.Bold, GraphicsUnit.Point)
+        slbl.ForeColor = Color.Chocolate
+        slbl.Location = New Point(196, 13)
         slbl.Name = "slbl"
-        slbl.Size = New Size(52, 20)
+        slbl.Size = New Size(26, 28)
         slbl.TabIndex = 31
-        slbl.Text = "sname"
+        slbl.Text = "  "
         ' 
         ' ItemDGV
         ' 
@@ -233,7 +261,7 @@ Partial Class Seller
         TotalBill.BackColor = Color.Transparent
         TotalBill.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point)
         TotalBill.ForeColor = Color.Chocolate
-        TotalBill.Location = New Point(1434, 760)
+        TotalBill.Location = New Point(1445, 815)
         TotalBill.Name = "TotalBill"
         TotalBill.Size = New Size(67, 31)
         TotalBill.TabIndex = 28
@@ -244,7 +272,7 @@ Partial Class Seller
         btn_print.BackColor = Color.Chocolate
         btn_print.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         btn_print.ForeColor = Color.Snow
-        btn_print.Location = New Point(1380, 675)
+        btn_print.Location = New Point(1391, 730)
         btn_print.Name = "btn_print"
         btn_print.Size = New Size(175, 44)
         btn_print.TabIndex = 27
@@ -256,7 +284,7 @@ Partial Class Seller
         btn_view_orders.BackColor = Color.Chocolate
         btn_view_orders.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         btn_view_orders.ForeColor = Color.Snow
-        btn_view_orders.Location = New Point(1380, 844)
+        btn_view_orders.Location = New Point(1380, 869)
         btn_view_orders.Name = "btn_view_orders"
         btn_view_orders.Size = New Size(186, 53)
         btn_view_orders.TabIndex = 26
@@ -410,14 +438,17 @@ Partial Class Seller
         ' PrintDocument1
         ' 
         ' 
-        ' Label6
+        ' Clear
         ' 
-        Label6.AutoSize = True
-        Label6.Location = New Point(24, 19)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(52, 20)
-        Label6.TabIndex = 32
-        Label6.Text = "sname"
+        Clear.BackColor = Color.Chocolate
+        Clear.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Clear.ForeColor = Color.Snow
+        Clear.Location = New Point(1391, 645)
+        Clear.Name = "Clear"
+        Clear.Size = New Size(175, 44)
+        Clear.TabIndex = 33
+        Clear.Text = "Clear"
+        Clear.UseVisualStyleBackColor = False
         ' 
         ' Seller
         ' 
@@ -429,6 +460,7 @@ Partial Class Seller
         Text = "Seller"
         WindowState = FormWindowState.Maximized
         Panel1.ResumeLayout(False)
+        CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
         Panel5.ResumeLayout(False)
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         Panel4.ResumeLayout(False)
@@ -478,4 +510,6 @@ Partial Class Seller
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents slbl As Label
     Friend WithEvents Label6 As Label
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents Clear As Button
 End Class

@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class Admin_login
-    Dim Con As SqlConnection = New SqlConnection("Data Source=DELL\SQLEXPRESS;Initial Catalog=Cafe;Integrated Security=True")
+    Dim Con As SqlConnection = New SqlConnection("Data Source=DELL\SQLEXPRESS;Initial Catalog=CMS;Integrated Security=True")
     Private Sub btn_login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
         If txt_password.Text = "" Then
             MsgBox("Enter UserName and Password")

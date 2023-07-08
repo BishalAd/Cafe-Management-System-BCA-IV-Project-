@@ -51,6 +51,7 @@ Partial Class Add_Employee
         PictureBox2 = New PictureBox()
         Panel5 = New Panel()
         PictureBox3 = New PictureBox()
+        PictureBox4 = New PictureBox()
         Panel1.SuspendLayout()
         CType(EmployeeDGV, ComponentModel.ISupportInitialize).BeginInit()
         Panel2.SuspendLayout()
@@ -60,6 +61,7 @@ Partial Class Add_Employee
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         Panel5.SuspendLayout()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel1
@@ -369,12 +371,23 @@ Partial Class Add_Employee
         PictureBox3.TabIndex = 24
         PictureBox3.TabStop = False
         ' 
+        ' PictureBox4
+        ' 
+        PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
+        PictureBox4.Location = New Point(-5, -4)
+        PictureBox4.Name = "PictureBox4"
+        PictureBox4.Size = New Size(270, 291)
+        PictureBox4.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox4.TabIndex = 32
+        PictureBox4.TabStop = False
+        ' 
         ' Add_Employee
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.Chocolate
         ClientSize = New Size(1902, 1033)
+        Controls.Add(PictureBox4)
         Controls.Add(Panel5)
         Controls.Add(Panel4)
         Controls.Add(Panel3)
@@ -392,6 +405,7 @@ Partial Class Add_Employee
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         Panel5.ResumeLayout(False)
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -422,4 +436,5 @@ Partial Class Add_Employee
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Panel5 As Panel
     Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
 End Class
