@@ -33,4 +33,9 @@ Public Class MaterialUsed
         DisplayBill(DateTimePicker1.Value.Date)
     End Sub
 
+    Private Sub btn_back_order_Click(sender As Object, e As EventArgs) Handles btn_back_order.Click
+        Dim obj = New RawMaterial()
+        obj.Show()
+        Me.Hide()
+    End Sub
 End Class

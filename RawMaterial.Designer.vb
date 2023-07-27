@@ -127,7 +127,7 @@ Partial Class RawMaterial
         Panel3.BackColor = Color.Snow
         Panel3.Controls.Add(btnAddEmp)
         Panel3.Controls.Add(PictureBox1)
-        Panel3.Location = New Point(43, 606)
+        Panel3.Location = New Point(46, 596)
         Panel3.Name = "Panel3"
         Panel3.Size = New Size(207, 49)
         Panel3.TabIndex = 35
@@ -169,7 +169,7 @@ Partial Class RawMaterial
         Panel4.BackColor = Color.Snow
         Panel4.Controls.Add(btnGotoSeller)
         Panel4.Controls.Add(PictureBox2)
-        Panel4.Location = New Point(43, 773)
+        Panel4.Location = New Point(46, 792)
         Panel4.Name = "Panel4"
         Panel4.Size = New Size(207, 49)
         Panel4.TabIndex = 36
@@ -490,7 +490,7 @@ Partial Class RawMaterial
         Button3.Name = "Button3"
         Button3.Size = New Size(161, 44)
         Button3.TabIndex = 23
-        Button3.Text = "Home"
+        Button3.Text = "View Used Raw Material"
         Button3.UseVisualStyleBackColor = False
         ' 
         ' PictureBox5
