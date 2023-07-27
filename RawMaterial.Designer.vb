@@ -490,7 +490,7 @@ Partial Class RawMaterial
         Button3.Name = "Button3"
         Button3.Size = New Size(161, 44)
         Button3.TabIndex = 23
-        Button3.Text = "View Used Raw Material"
+        Button3.Text = "History"
         Button3.UseVisualStyleBackColor = False
         ' 
         ' PictureBox5

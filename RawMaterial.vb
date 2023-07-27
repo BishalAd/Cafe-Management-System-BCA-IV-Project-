@@ -176,11 +176,11 @@ Public Class RawMaterial
     Private Sub AddRecord()
         Try
             Con.Open()
-            Dim query As String = "INSERT INTO TblRawUsed (orddate, ordamt) VALUES (@OrderDate, @OrderAmount)"
+            Dim query As String = "INSERT INTO TblRawUsed (Date, Amount) VALUES (@Date, @Amount)"
             Dim cmd As SqlCommand = New SqlCommand(query, Con)
 
-            cmd.Parameters.AddWithValue("@OrderDate", DateTime.Now.Date)
-            cmd.Parameters.AddWithValue("@OrderAmount", GrTotal)
+            cmd.Parameters.AddWithValue("@Date", DateTime.Now.Date)
+            cmd.Parameters.AddWithValue("@Amount", GrTotal)
             cmd.ExecuteNonQuery()
             MsgBox("Added")
             Con.Close()
@@ -191,6 +191,9 @@ Public Class RawMaterial
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         AddRecord()
+        Dim obj = New RawMaterial
+        Me.Hide()
+        obj.Show()
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click

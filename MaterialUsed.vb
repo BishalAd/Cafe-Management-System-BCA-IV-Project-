@@ -5,7 +5,7 @@ Public Class MaterialUsed
 
     Private Sub DisplayBill(ByVal selectedDate As Date)
         Con.Open()
-        Dim query As String = "SELECT RawId, orddate, ordamt FROM TblRawUsed WHERE orddate = @SelectedDate"
+        Dim query As String = "SELECT RawId, Date, Amount FROM TblRawUsed WHERE Date = @SelectedDate"
         Dim cmd As SqlCommand = New SqlCommand(query, Con)
         cmd.Parameters.AddWithValue("@SelectedDate", selectedDate)
         Dim adapter As SqlDataAdapter = New SqlDataAdapter(cmd)
@@ -17,7 +17,7 @@ Public Class MaterialUsed
         ' Calculate and display the total sales amount
         Dim totalAmount As Decimal = 0
         For Each row As DataRow In ds.Tables(0).Rows
-            totalAmount += Convert.ToDecimal(row("ordamt"))
+            totalAmount += Convert.ToDecimal(row("Amount"))
         Next
 
         TotalSum.Text = totalAmount.ToString("N2") ' Format the total amount with two decimal places

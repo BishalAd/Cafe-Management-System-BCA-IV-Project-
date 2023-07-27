@@ -423,7 +423,7 @@ Partial Class Add_New_Cagegory
         btnRawMaterial.Name = "btnRawMaterial"
         btnRawMaterial.Size = New Size(161, 44)
         btnRawMaterial.TabIndex = 23
-        btnRawMaterial.Text = "Add Employee"
+        btnRawMaterial.Text = "Raw Material"
         btnRawMaterial.UseVisualStyleBackColor = False
         ' 
         ' PictureBox4
