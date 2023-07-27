@@ -36,6 +36,7 @@ Partial Class Seller
         PictureBox1 = New PictureBox()
         btnHome = New Button()
         Panel2 = New Panel()
+        Clear = New Button()
         Label6 = New Label()
         slbl = New Label()
         ItemDGV = New DataGridView()
@@ -58,7 +59,6 @@ Partial Class Seller
         combo = New ComboBox()
         PrintPreviewDialog1 = New PrintPreviewDialog()
         PrintDocument1 = New Printing.PrintDocument()
-        Clear = New Button()
         Panel1.SuspendLayout()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
         Panel5.SuspendLayout()
@@ -214,6 +214,18 @@ Partial Class Seller
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(1632, 1009)
         Panel2.TabIndex = 0
+        ' 
+        ' Clear
+        ' 
+        Clear.BackColor = Color.Chocolate
+        Clear.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Clear.ForeColor = Color.Snow
+        Clear.Location = New Point(1391, 645)
+        Clear.Name = "Clear"
+        Clear.Size = New Size(175, 44)
+        Clear.TabIndex = 33
+        Clear.Text = "Clear"
+        Clear.UseVisualStyleBackColor = False
         ' 
         ' Label6
         ' 
@@ -437,18 +449,6 @@ Partial Class Seller
         ' 
         ' PrintDocument1
         ' 
-        ' 
-        ' Clear
-        ' 
-        Clear.BackColor = Color.Chocolate
-        Clear.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Clear.ForeColor = Color.Snow
-        Clear.Location = New Point(1391, 645)
-        Clear.Name = "Clear"
-        Clear.Size = New Size(175, 44)
-        Clear.TabIndex = 33
-        Clear.Text = "Clear"
-        Clear.UseVisualStyleBackColor = False
         ' 
         ' Seller
         ' 

@@ -3,9 +3,9 @@ Imports System.Xml.Schema
 Imports System.Graphic
 
 Public Class Seller
-    Public Property UserName As String
+    'Public Property UserName As String
 
-    'Public UserName As String
+    Public Shared UserName As String
     Dim Con As SqlConnection = New SqlConnection("Data Source=DELL\SQLEXPRESS;Initial Catalog=CMS;Integrated Security=True")
     Private Sub btn_logout_seller_Click(sender As Object, e As EventArgs) Handles btn_logout_seller.Click
         Dim obj = New Seller_login
@@ -142,6 +142,7 @@ Public Class Seller
             cmd.Parameters.AddWithValue("@OrderAmount", GrTotal)
             cmd.ExecuteNonQuery()
             MsgBox("Bill Added")
+            Con.Close()
         Catch ex As Exception
             MessageBox.Show("An error occurred while adding the bill: " & ex.Message)
         End Try
@@ -262,6 +263,9 @@ Public Class Seller
     End Sub
 
     Private Sub Clear_Click(sender As Object, e As EventArgs) Handles Clear.Click
-
+        Dim obj As New Seller
+        'obj.UserName
+        obj.Show()
+        Me.Hide()
     End Sub
 End Class

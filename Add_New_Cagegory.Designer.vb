@@ -45,8 +45,6 @@ Partial Class Add_New_Cagegory
         Label7 = New Label()
         Panel1 = New Panel()
         Panel2 = New Panel()
-        txtCostPrice = New TextBox()
-        Label8 = New Label()
         txtName = New TextBox()
         btnGotoSeller = New Button()
         btnDeleteCat = New Button()
@@ -57,6 +55,9 @@ Partial Class Add_New_Cagegory
         Panel3 = New Panel()
         Panel4 = New Panel()
         Panel5 = New Panel()
+        Panel6 = New Panel()
+        btnRawMaterial = New Button()
+        PictureBox4 = New PictureBox()
         CType(ItemDGV, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
@@ -66,6 +67,8 @@ Partial Class Add_New_Cagegory
         Panel3.SuspendLayout()
         Panel4.SuspendLayout()
         Panel5.SuspendLayout()
+        Panel6.SuspendLayout()
+        CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' btnAddCat
@@ -148,7 +151,7 @@ Partial Class Add_New_Cagegory
         combo.Font = New Font("Arial Narrow", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
         combo.FormattingEnabled = True
         combo.Items.AddRange(New Object() {"bishwax", "ass", "daSD", "FAS", "ASDSW", "SA", "ASAsd", "vc", "ASD", "ZADE", "safcxv", "f", "cvf", "dfvc", "f"})
-        combo.Location = New Point(441, 87)
+        combo.Location = New Point(515, 87)
         combo.Name = "combo"
         combo.Size = New Size(215, 35)
         combo.TabIndex = 11
@@ -156,7 +159,7 @@ Partial Class Add_New_Cagegory
         ' txtPrice
         ' 
         txtPrice.Font = New Font("Arial Narrow", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
-        txtPrice.Location = New Point(1316, 88)
+        txtPrice.Location = New Point(1252, 88)
         txtPrice.Name = "txtPrice"
         txtPrice.Size = New Size(130, 34)
         txtPrice.TabIndex = 10
@@ -176,7 +179,7 @@ Partial Class Add_New_Cagegory
         ' txtQuantity
         ' 
         txtQuantity.Font = New Font("Arial Narrow", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
-        txtQuantity.Location = New Point(790, 88)
+        txtQuantity.Location = New Point(891, 88)
         txtQuantity.Name = "txtQuantity"
         txtQuantity.Size = New Size(130, 34)
         txtQuantity.TabIndex = 9
@@ -186,7 +189,7 @@ Partial Class Add_New_Cagegory
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point)
         Label3.ForeColor = Color.Snow
-        Label3.Location = New Point(790, 31)
+        Label3.Location = New Point(891, 31)
         Label3.Name = "Label3"
         Label3.Size = New Size(108, 31)
         Label3.TabIndex = 4
@@ -197,7 +200,7 @@ Partial Class Add_New_Cagegory
         Label4.AutoSize = True
         Label4.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point)
         Label4.ForeColor = Color.Snow
-        Label4.Location = New Point(1316, 31)
+        Label4.Location = New Point(1252, 31)
         Label4.Name = "Label4"
         Label4.Size = New Size(147, 31)
         Label4.TabIndex = 5
@@ -208,7 +211,7 @@ Partial Class Add_New_Cagegory
         Label5.AutoSize = True
         Label5.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point)
         Label5.ForeColor = Color.Snow
-        Label5.Location = New Point(468, 31)
+        Label5.Location = New Point(542, 31)
         Label5.Name = "Label5"
         Label5.Size = New Size(127, 31)
         Label5.TabIndex = 6
@@ -283,8 +286,6 @@ Partial Class Add_New_Cagegory
         ' Panel2
         ' 
         Panel2.BackColor = Color.Transparent
-        Panel2.Controls.Add(txtCostPrice)
-        Panel2.Controls.Add(Label8)
         Panel2.Controls.Add(Button5)
         Panel2.Controls.Add(btnRemove)
         Panel2.Controls.Add(btnEdit)
@@ -301,25 +302,6 @@ Partial Class Add_New_Cagegory
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(1534, 247)
         Panel2.TabIndex = 4
-        ' 
-        ' txtCostPrice
-        ' 
-        txtCostPrice.Font = New Font("Arial Narrow", 13.8F, FontStyle.Regular, GraphicsUnit.Point)
-        txtCostPrice.Location = New Point(1070, 88)
-        txtCostPrice.Name = "txtCostPrice"
-        txtCostPrice.Size = New Size(130, 34)
-        txtCostPrice.TabIndex = 16
-        ' 
-        ' Label8
-        ' 
-        Label8.AutoSize = True
-        Label8.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point)
-        Label8.ForeColor = Color.Snow
-        Label8.Location = New Point(1070, 31)
-        Label8.Name = "Label8"
-        Label8.Size = New Size(120, 31)
-        Label8.TabIndex = 15
-        Label8.Text = "Cost Price"
         ' 
         ' txtName
         ' 
@@ -423,12 +405,45 @@ Partial Class Add_New_Cagegory
         Panel5.Size = New Size(207, 49)
         Panel5.TabIndex = 29
         ' 
+        ' Panel6
+        ' 
+        Panel6.BackColor = Color.Snow
+        Panel6.Controls.Add(btnRawMaterial)
+        Panel6.Controls.Add(PictureBox4)
+        Panel6.Location = New Point(27, 587)
+        Panel6.Name = "Panel6"
+        Panel6.Size = New Size(207, 49)
+        Panel6.TabIndex = 28
+        ' 
+        ' btnRawMaterial
+        ' 
+        btnRawMaterial.BackColor = Color.Snow
+        btnRawMaterial.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        btnRawMaterial.Location = New Point(46, 3)
+        btnRawMaterial.Name = "btnRawMaterial"
+        btnRawMaterial.Size = New Size(161, 44)
+        btnRawMaterial.TabIndex = 23
+        btnRawMaterial.Text = "Add Employee"
+        btnRawMaterial.UseVisualStyleBackColor = False
+        ' 
+        ' PictureBox4
+        ' 
+        PictureBox4.BackColor = Color.Transparent
+        PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
+        PictureBox4.Location = New Point(6, 3)
+        PictureBox4.Name = "PictureBox4"
+        PictureBox4.Size = New Size(47, 44)
+        PictureBox4.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox4.TabIndex = 24
+        PictureBox4.TabStop = False
+        ' 
         ' Add_New_Cagegory
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.Chocolate
         ClientSize = New Size(1902, 1033)
+        Controls.Add(Panel6)
         Controls.Add(Panel5)
         Controls.Add(Panel4)
         Controls.Add(Panel3)
@@ -452,6 +467,8 @@ Partial Class Add_New_Cagegory
         Panel3.ResumeLayout(False)
         Panel4.ResumeLayout(False)
         Panel5.ResumeLayout(False)
+        Panel6.ResumeLayout(False)
+        CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -487,6 +504,7 @@ Partial Class Add_New_Cagegory
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel5 As Panel
-    Friend WithEvents txtCostPrice As TextBox
-    Friend WithEvents Label8 As Label
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents btnRawMaterial As Button
+    Friend WithEvents PictureBox4 As PictureBox
 End Class
